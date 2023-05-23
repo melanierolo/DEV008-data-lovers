@@ -1,7 +1,5 @@
 # Data Lovers
-
-
-Probando Pull Request
+PRUEBA DE COMMITS
 ## 2. Resumen del proyecto
 
 En este proyecto **construirás una _página web_ para visualizar un
