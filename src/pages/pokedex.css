@@ -1,7 +1,7 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
-
+  box-sizing: border-box;
 }
 .cards {
   display: flex;
@@ -80,67 +80,53 @@
   text-align: center;
 }
 
-header{
-background-color: #3B5BA7;
-height: 80px;
+header {
+  background-color: #3b5ba7;
+  height: 80px;
 }
 
-.imgLogo{
+.imgLogo {
   height: 50px;
   width: auto;
   padding-top: 15px;
   padding-left: 20px;
 }
 
-.banner{
+.banner {
   background-color: black;
   height: 100vh;
-  display:grid;
-  grid-template-columns:50% 50%;
-
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
-.textBanner{
-  grid-column-start:1;
-
+.textBanner {
+  grid-column-start: 1;
 }
 
-h1{
-  
+h1 {
   color: white;
-  font-family:'Poppins';
-  font-style:normal;
+  font-family: "Poppins";
+  font-style: normal;
   font-size: 56px;
   line-height: 84px;
-  padding-top: 20% ;
-  padding-left:20%;
-  
-  
+  padding-top: 20%;
+  padding-left: 20%;
 }
 
-.textBanner > p{
-
-
-color: white;
-width: 684px;
-font-family: 'Poppins';
-font-style: normal;
-font-size: 30px;
-line-height: 36px;
-padding-top: 5%;
-padding-left: 5%;
-text-align: center;
-
-
-
-  
+.textBanner > p {
+  color: white;
+  width: 684px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 30px;
+  line-height: 36px;
+  padding-top: 5%;
+  padding-left: 5%;
+  text-align: center;
 }
 
-
-.bannerImage > img{
-  grid-column-start:2;
-  width:100%;
-  height:auto;
-
-  
+.bannerImage > img {
+  grid-column-start: 2;
+  width: 100%;
+  height: auto;
 }
