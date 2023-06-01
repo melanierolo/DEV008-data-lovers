@@ -5,9 +5,35 @@
     <title>Pokémon | Home</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header></header>
-    <main><a href="./pages/pokedex.html">Go to pokédex</a></main>
+  <body class="home">
+    <header class="logo">
+      <h1>
+        <img
+          class="logo__img"
+          src="./assets/Pokémon_logo.svg"
+          alt="international pokémon logo"
+        />
+      </h1>
+    </header>
+    <main>
+      <section class="welcome">
+        <div class="welcome__text">
+          <h2>Welcome to Pokémon</h2>
+          <p>
+            Hello, trainer.In this chapter, your goal is to catch a lot of
+            Pokémon.
+          </p>
+          <p class="phrase">&#8220;Gotta catch them all!&#8221;</p>
+          <a href="./pages/pokedex.html">GET STARTED</a>
+        </div>
+        <div class="welcome__img">
+          <img
+            src="./assets/pikachu-squirtle-bulbasaur-charmander.png"
+            alt="pokémon - pikachu,squirtle,bulbasaur and charmander"
+          />
+        </div>
+      </section>
+    </main>
     <footer></footer>
     <script src="main.js" type="module"></script>
   </body>
