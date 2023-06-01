@@ -46,20 +46,44 @@ console.log("function filter-electric", filterByType(newPokemon, "electric"));
 
 console.log("function filter-water", filterByType(newPokemon, "water"));
 console.log("function filter-flying", filterByType(newPokemon, "flying"));
+console.log("un solo pokemon", newPokemon[0].type);
 
-/*order by number
-function orderByNumber(newArray, direction) {
-  const orderedArray = newArray.sort((a, b) => {
-    if (direction === "asc") {
-      return a.num > b.num ? 1 : -1;
-    } else if (direction === "desc") {
-      return a.num < b.num ? 1 : -1;
-    }
-  });
+const newPokemonTwo = [...allPokemon];
+
+function orderByNumberAsc(array) {
+  const orderedArray = [...array].sort((a, b) =>
+    parseInt(a.num) > parseInt(b.num) ? 1 : -1
+  );
   return orderedArray;
 }
 
-console.log("function sort-asc", orderByNumber(newArray, "asc"));
-console.log("function sort-des", orderByNumber(newArray, "desc"));
-*/
-console.log("un solo pokemon", newPokemon[0].type);
+function orderByNumberDesc(array) {
+  const orderedArray = [...array].sort((a, b) =>
+    parseInt(a.num) < parseInt(b.num) ? 1 : -1
+  );
+  return orderedArray;
+}
+
+function orderByAlphaA(array) {
+  const orderedArray = [...array].sort((a, b) =>
+    a.name[0] > b.name[0] ? 1 : -1
+  );
+  return orderedArray;
+}
+
+function orderByAlphaZ(array) {
+  const orderedArray = [...array].sort((a, b) =>
+    a.name[0] < b.name[0] ? 1 : -1
+  );
+  return orderedArray;
+}
+
+const sortAsc = orderByNumberAsc(newPokemonTwo);
+const sortDesc = orderByNumberDesc(newPokemonTwo);
+const sortAtoZ = orderByAlphaA(newPokemonTwo);
+const sortZtoA = orderByAlphaZ(newPokemonTwo);
+
+console.log("function sort-asc", sortAsc);
+console.log("function sort-desc", sortDesc);
+console.log("function A-Z", sortAtoZ);
+console.log("function Z-A", sortZtoA);
