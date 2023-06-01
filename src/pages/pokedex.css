@@ -1,3 +1,8 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+}
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -73,4 +78,69 @@
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+}
+
+header{
+background-color: #3B5BA7;
+height: 80px;
+}
+
+.imgLogo{
+  height: 50px;
+  width: auto;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.banner{
+  background-color: black;
+  height: 100vh;
+  display:grid;
+  grid-template-columns:50% 50%;
+
+}
+
+.textBanner{
+  grid-column-start:1;
+
+}
+
+h1{
+  
+  color: white;
+  font-family:'Poppins';
+  font-style:normal;
+  font-size: 56px;
+  line-height: 84px;
+  padding-top: 20% ;
+  padding-left:20%;
+  
+  
+}
+
+.textBanner > p{
+
+
+color: white;
+width: 684px;
+font-family: 'Poppins';
+font-style: normal;
+font-size: 30px;
+line-height: 36px;
+padding-top: 5%;
+padding-left: 5%;
+text-align: center;
+
+
+
+  
+}
+
+
+.bannerImage > img{
+  grid-column-start:2;
+  width:100%;
+  height:auto;
+
+  
 }
