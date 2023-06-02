@@ -10,29 +10,34 @@
   </head>
   <body>
     <header>
-     <img class="imgLogo"
-      src="/assets/Pokémon_logo.svg"
-      /> 
+      <img class="imgLogo" src="../assets/Pokémon_logo.svg" />
     </header>
     <main>
       <section class="banner">
         <div class="textBanner">
-         <h1>Hello Trainer</h1>
-         <p>Your invited to look for the best qualities of the Pokémon, 
-          you can filter and find the ones that best suit you, to become a Pokémon Master.</p>
+          <h1>Hello Trainer</h1>
+          <p>
+            Your invited to look for the best qualities of the Pokémon, you can
+            filter and find the ones that best suit you, to become a Pokémon
+            Master.
+          </p>
         </div>
-        
-        <div class="bannerImage">
-          <img src="../assets/11275.webp">
-        </div>
-        
-      </section>
 
+        <div class="bannerImage">
+          <img src="../assets/11275.webp" />
+        </div>
+      </section>
+      <section class="sortButtons">
+        <button id="sortAlphaA">A-Z</button>
+        <button id="sortAlphaZ">Z-A</button>
+        <button id="sortAscNumber">Asc.by Number</button>
+        <button id="sortDescNumber">Desc.by Number</button>
+      </section>
       <section>
         <div class="cards" id="cards"></div>
       </section>
     </main>
     <footer></footer>
+    <script src="./pokedex.js" type="module"></script>
   </body>
-  <script src="./pokedex.js" type="module"></script>
 </html>

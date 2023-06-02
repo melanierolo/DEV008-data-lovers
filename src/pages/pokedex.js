@@ -1,6 +1,12 @@
-import { example, allPokemon } from "../dataController.js";
+import { allPokemon } from "../dataController.js";
+import {
+  orderByNumberAsc,
+  orderByNumberDesc,
+  orderByAlphaA,
+  orderByAlphaZ,
+} from "../dataController.js";
 
-console.log(example, allPokemon);
+console.log(allPokemon);
 
 function createCard(pokemon) {
   let allPills = "";
@@ -28,8 +34,60 @@ function createCard(pokemon) {
   return card;
 }
 
-const cards = document.getElementById("cards");
-
-for (let i = 0; i < allPokemon.length; i++) {
-  cards.innerHTML += createCard(allPokemon[i]);
+function renderDataToHtml(data) {
+  const cards = document.getElementById("cards");
+  for (let i = 0; i < data.length; i++) {
+    cards.innerHTML += createCard(data[i]);
+  }
 }
+
+const copieAllPokemon = [...allPokemon];
+renderDataToHtml(copieAllPokemon);
+
+// Sort Buttons Section
+const buttonSortAlphaA = document.getElementById("sortAlphaA");
+const buttonSortAlphaZ = document.getElementById("sortAlphaZ");
+const buttonSortAscNumber = document.getElementById("sortAscNumber");
+const buttonSortDescNumber = document.getElementById("sortDescNumber");
+
+buttonSortAlphaA.addEventListener("click", function () {
+  const cards = document.getElementById("cards");
+  //Clean
+  cards.innerHTML = "";
+  const sortAlphaA = orderByAlphaA(copieAllPokemon);
+  renderDataToHtml(sortAlphaA);
+});
+
+buttonSortAlphaZ.addEventListener("click", function () {
+  const cards = document.getElementById("cards");
+  //Clean
+  cards.innerHTML = "";
+  const sortAlphaZ = orderByAlphaZ(copieAllPokemon);
+  renderDataToHtml(sortAlphaZ);
+});
+
+buttonSortAscNumber.addEventListener("click", function () {
+  const cards = document.getElementById("cards");
+  //Clean
+  cards.innerHTML = "";
+  const sortAscNumber = orderByNumberAsc(copieAllPokemon);
+  renderDataToHtml(sortAscNumber);
+});
+
+buttonSortDescNumber.addEventListener("click", function () {
+  const cards = document.getElementById("cards");
+  //Clean
+  cards.innerHTML = "";
+  const sortDescNumber = orderByNumberDesc(copieAllPokemon);
+  renderDataToHtml(sortDescNumber);
+});
+
+const sortAsc = orderByNumberAsc(copieAllPokemon);
+const sortDesc = orderByNumberDesc(copieAllPokemon);
+const sortAtoZ = orderByAlphaA(copieAllPokemon);
+const sortZtoA = orderByAlphaZ(copieAllPokemon);
+
+console.log("function sort-asc", sortAsc);
+console.log("function sort-desc", sortDesc);
+console.log("function A-Z", sortAtoZ);
+console.log("function Z-A", sortZtoA);
