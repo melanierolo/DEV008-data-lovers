@@ -50,7 +50,7 @@ const buttonSortAlphaZ = document.getElementById("sortAlphaZ");
 const buttonSortAscNumber = document.getElementById("sortAscNumber");
 const buttonSortDescNumber = document.getElementById("sortDescNumber");
 
-buttonSortAlphaA?.addEventListener("click", function () {
+buttonSortAlphaA.addEventListener("click", function () {
   const cards = document.getElementById("cards");
   //Clean
   cards.innerHTML = "";
@@ -58,7 +58,7 @@ buttonSortAlphaA?.addEventListener("click", function () {
   renderDataToHtml(sortAlphaA);
 });
 
-buttonSortAlphaZ?.addEventListener("click", function () {
+buttonSortAlphaZ.addEventListener("click", function () {
   const cards = document.getElementById("cards");
   //Clean
   cards.innerHTML = "";
@@ -66,7 +66,7 @@ buttonSortAlphaZ?.addEventListener("click", function () {
   renderDataToHtml(sortAlphaZ);
 });
 
-buttonSortAscNumber?.addEventListener("click", function () {
+buttonSortAscNumber.addEventListener("click", function () {
   const cards = document.getElementById("cards");
   //Clean
   cards.innerHTML = "";
@@ -74,7 +74,7 @@ buttonSortAscNumber?.addEventListener("click", function () {
   renderDataToHtml(sortAscNumber);
 });
 
-buttonSortDescNumber?.addEventListener("click", function () {
+buttonSortDescNumber.addEventListener("click", function () {
   const cards = document.getElementById("cards");
   //Clean
   cards.innerHTML = "";
