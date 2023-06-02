@@ -6,8 +6,6 @@ import {
   orderByAlphaZ,
 } from "../dataController.js";
 
-console.log(allPokemon);
-
 function createCard(pokemon) {
   let allPills = "";
   for (const pill of pokemon.type) {
@@ -81,13 +79,3 @@ buttonSortDescNumber.addEventListener("click", function () {
   const sortDescNumber = orderByNumberDesc(copieAllPokemon);
   renderDataToHtml(sortDescNumber);
 });
-
-const sortAsc = orderByNumberAsc(copieAllPokemon);
-const sortDesc = orderByNumberDesc(copieAllPokemon);
-const sortAtoZ = orderByAlphaA(copieAllPokemon);
-const sortZtoA = orderByAlphaZ(copieAllPokemon);
-
-console.log("function sort-asc", sortAsc);
-console.log("function sort-desc", sortDesc);
-console.log("function A-Z", sortAtoZ);
-console.log("function Z-A", sortZtoA);
