@@ -41,3 +41,47 @@ describe("Test para ordenar por número de forma alfabética de Z-A", () => {
     expect(orderByAlphaZ(arregloDesordenado)).toEqual(arregloOrdenado);
   });
 });
+
+import { orderByNumberAsc, orderByNumberDesc } from "../src/dataController.js";
+
+describe("Test para ordenar de forma numérica ascendente", () => {
+  it("is a function", () => {
+    expect(typeof orderByNumberAsc).toBe("function");
+  });
+  it("ordenando un arreglo (Numeros ascendentes)", () => {
+    const arregloDesordenado = [
+      { num: "120" },
+      { num: "20" },
+      { num: "3" },
+      { num: "45" },
+    ];
+    const arregloOrdenado = [
+      { num: "3" },
+      { num: "20" },
+      { num: "45" },
+      { num: "120" },
+    ];
+    expect(orderByNumberAsc(arregloDesordenado)).toEqual(arregloOrdenado);
+  });
+})
+
+describe("Test para ordenar de forma numérica descendente", () => {
+  it("is a function", () => {
+    expect(typeof orderByNumberDesc).toBe("function");
+  });
+  it("ordenando un arreglo (Numeros descendentes)", () => {
+    const arregloDesordenado = [
+      { num: "58" },
+      { num: "210" },
+      { num: "15" },
+      { num: "130" },
+    ];
+    const arregloOrdenado = [
+      { num: "210" },
+      { num: "130" },
+      { num: "58" },
+      { num: "15" },
+    ];
+    expect(orderByNumberDesc(arregloDesordenado)).toEqual(arregloOrdenado);
+  });
+})
