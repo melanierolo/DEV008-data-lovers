@@ -1,4 +1,4 @@
-import { example, anotherExample } from '../src/data.js';
+import { example, anotherExample } from '../src/dataController.js';
 
 
 describe('example', () => {
