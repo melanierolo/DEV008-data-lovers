@@ -51,29 +51,23 @@ const pokemonType = document.getElementById("pokemonType");
 pokemonType.addEventListener("input", function (e) {
   const event = e.inputType ? "input" : "selected";
   const selectedOption = e.target.value.toLowerCase();
-  console.log("-----------event input----------------");
-  console.log("event:", e, e.inputType);
-  console.log("event.inputType:", e.inputType);
-  console.log("selectedOption", selectedOption);
-  console.log("e.targetvalue", e.target.value);
   if (event === "selected") {
     const filterPokeByType = filterByType(copieAllPokemon, selectedOption);
-    console.log(filterPokeByType);
     renderDataToHtml(filterPokeByType);
   }
 });
 
 //Filter by Rarity
- const pokemonRarity = document.getElementById("pokemonRarity");
+const pokemonRarity = document.getElementById("pokemonRarity");
  
- pokemonRarity.addEventListener("input", function (e) {
+pokemonRarity.addEventListener("input", function (e) {
   const event = e.inputRarity ? "input" : "selected";
   const selectedOption = e.target.value.toLowerCase();
   if(event === "selected") {
     const filterPokemonByRarity = filterByRarity(copieAllPokemon, selectedOption);
     renderDataToHtml(filterPokemonByRarity);
   }
- })
+})
 
 // Sort Buttons Section
 const buttonSortAlphaA = document.getElementById("sortAlphaA");

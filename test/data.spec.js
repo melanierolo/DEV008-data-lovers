@@ -1,3 +1,4 @@
+//import pokemon from "../src/data/pokemon/pokemon.js";
 import { orderByAlphaA, orderByAlphaZ } from "../src/dataController.js";
 
 describe("Test para ordenar de forma alfabética de A-Z", () => {
@@ -85,3 +86,29 @@ describe("Test para ordenar de forma numérica descendente", () => {
     expect(orderByNumberDesc(arregloDesordenado)).toEqual(arregloOrdenado);
   });
 })
+
+import { filterByRarity } from "../src/dataController.js";
+
+describe("Test para saber si es una función", () => {
+  it("is a function", () => {
+    expect(typeof filterByRarity).toBe("function");
+  });
+  
+  /*it("filtrando pokemons por rareza", () => {
+    const newPokemon = [
+      { name: "Pikachu", "pokemon-rarity":"normal" },
+      { name: "Mewtwo", "pokemon-rarity":"legendary" },
+      { name: "Bulbasaur", "pokemon-rarity":"normal" },
+    ];
+
+    
+    it("should filter the Pokémon by rarity", () => {
+      const filteredPokemons = filterByRarity(newPokemon, "normal");
+
+      expect(filteredPokemons).toEqual([
+        { name: "Pikachu", "pokemon-rarity":"normal" },
+        { name: "Bulbasaur", "pokemon-rarity":"normal" },
+      ]);
+    
+    });
+  })});*/})
