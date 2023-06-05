@@ -1,4 +1,5 @@
 import { orderByAlphaA, orderByAlphaZ } from "../src/dataController.js";
+import { searchByName } from "../src/dataController.js";
 
 describe("Test para ordenar de forma alfabética de A-Z", () => {
   it("is a function", () => {
@@ -63,7 +64,7 @@ describe("Test para ordenar de forma numérica ascendente", () => {
     ];
     expect(orderByNumberAsc(arregloDesordenado)).toEqual(arregloOrdenado);
   });
-})
+});
 
 describe("Test para ordenar de forma numérica descendente", () => {
   it("is a function", () => {
@@ -84,4 +85,21 @@ describe("Test para ordenar de forma numérica descendente", () => {
     ];
     expect(orderByNumberDesc(arregloDesordenado)).toEqual(arregloOrdenado);
   });
-})
+});
+
+describe("Test para buscar por nombre", () => {
+  it("is a function", () => {
+    expect(typeof orderByNumberDesc).toBe("function");
+  });
+  it("Buscando coincidencias en el arreglo con el valor ingresado", () => {
+    const valorIngresado = "el";
+    const arreglo = [
+      { name: "elena" },
+      { name: "mateo" },
+      { name: "angel" },
+      { name: "martina" },
+    ];
+    const arregloResultado = [{ name: "elena" }, { name: "angel" }];
+    expect(searchByName(arreglo, valorIngresado)).toEqual(arregloResultado);
+  });
+});
