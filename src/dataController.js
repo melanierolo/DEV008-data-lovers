@@ -39,9 +39,16 @@ export const filterByType = (newPokemon, type) => {
 };
 
 export const filterByRarity = (newPokemon, type) => {
-  const result = newPokemon.filter ((pokemon) =>
-    pokemon["pokemon-rarity"] === type);
-    
+  const result = newPokemon.filter(
+    (pokemon) => pokemon["pokemon-rarity"] === type
+  );
+
   return result;
 };
- 
+
+export const searchByName = (arrayPokemon, valueInput) => {
+  const result = [...arrayPokemon].filter((pokemon) =>
+    pokemon.name.includes(valueInput)
+  );
+  return result;
+};
