@@ -30,6 +30,50 @@
       <section class="search">
         <input type="text" placeholder="search...">
       </section>
+      <section>
+        <label>Filter by:</label>
+        <input
+          list="pokemonTypes"
+          id="pokemonType"
+          name="pokemonType"
+          placeholder="Type"
+        />
+        <datalist id="pokemonTypes">
+          <option value="Normal"></option>
+          <option value="Fire"></option>
+          <option value="Water"></option>
+          <option value="Grass"></option>
+          <option value="Electric"></option>
+          <option value="Ice"></option>
+          <option value="Fighting"></option>
+          <option value="Poison"></option>
+          <option value="Ground"></option>
+          <option value="Flying"></option>
+          <option value="Psychic"></option>
+          <option value="Bug"></option>
+          <option value="Rock"></option>
+          <option value="Ghost"></option>
+          <option value="Dark"></option>
+          <option value="Dark"></option>
+          <option value="Dragon"></option>
+          <option value="Steel"></option>
+          <option value="Fairy"></option>
+        </datalist>
+
+        <input
+          list="pokemonRarities"
+          id="pokemonRarity"
+          name="pokemonRarity"
+          placeholder="Rarity"
+        />
+        <datalist id="pokemonRarities">
+          <option value="Normal"></option>
+          <option value="Legendary"></option>
+          <option value="Mythic"></option>
+        </datalist>
+
+        <button>CLEAR</button>
+      </section>
       <section class="sortButtons">
         <button id="sortAlphaA">A-Z</button>
         <button id="sortAlphaZ">Z-A</button>
