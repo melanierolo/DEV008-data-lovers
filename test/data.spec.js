@@ -1,5 +1,5 @@
 import { orderByAlphaA, orderByAlphaZ } from "../src/dataController.js";
-import { searchByName } from "../src/dataController.js";
+import { searchByName, filterByType } from "../src/dataController.js";
 
 describe("Test para ordenar de forma alfabética de A-Z", () => {
   it("is a function", () => {
@@ -91,7 +91,7 @@ describe("Test para buscar por nombre", () => {
   it("is a function", () => {
     expect(typeof orderByNumberDesc).toBe("function");
   });
-  it("Buscando coincidencias en el arreglo con el valor ingresado", () => {
+  it("Buscando coincidencias en el arreglo de nombres el valor ingresado('el')", () => {
     const valorIngresado = "el";
     const arreglo = [
       { name: "elena" },
@@ -101,5 +101,25 @@ describe("Test para buscar por nombre", () => {
     ];
     const arregloResultado = [{ name: "elena" }, { name: "angel" }];
     expect(searchByName(arreglo, valorIngresado)).toEqual(arregloResultado);
+  });
+});
+
+describe("Test filtrar por tipo", () => {
+  it("is a function", () => {
+    expect(typeof orderByNumberDesc).toBe("function");
+  });
+  it("Buscando en un arreglo de frutas el tipo dulce", () => {
+    const tipo = "dulce";
+    const arreglo = [
+      { name: "manzana roja", type: ["dulce"] },
+      { name: "limón", type: ["acido"] },
+      { name: "higo", type: ["dulce"] },
+      { name: "maracuyá", type: ["acido"] },
+    ];
+    const arregloResultado = [
+      { name: "manzana roja", type: ["dulce"] },
+      { name: "higo", type: ["dulce"] },
+    ];
+    expect(filterByType(arreglo, tipo)).toEqual(arregloResultado);
   });
 });
