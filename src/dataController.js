@@ -29,3 +29,10 @@ export const orderByAlphaZ = (array) => {
   );
   return orderedArray;
 };
+
+export const filterByType = (newPokemon, type) => {
+  const result = newPokemon.filter(function (pokemon) {
+    return pokemon.type.includes(type);
+  });
+  return result;
+};

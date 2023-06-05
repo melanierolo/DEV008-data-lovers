@@ -5,6 +5,7 @@ import {
   orderByAlphaA,
   orderByAlphaZ,
 } from "../dataController.js";
+import { filterByType } from "../dataController.js";
 
 function createCard(pokemon) {
   let allPills = "";
@@ -34,6 +35,8 @@ function createCard(pokemon) {
 
 function renderDataToHtml(data) {
   const cards = document.getElementById("cards");
+  //Clean
+  cards.innerHTML = "";
   for (let i = 0; i < data.length; i++) {
     cards.innerHTML += createCard(data[i]);
   }
@@ -42,6 +45,24 @@ function renderDataToHtml(data) {
 const copieAllPokemon = [...allPokemon];
 renderDataToHtml(copieAllPokemon);
 
+//Filter by Type
+const pokemonType = document.getElementById("pokemonType");
+
+pokemonType.addEventListener("input", function (e) {
+  const event = e.inputType ? "input" : "selected";
+  const selectedOption = e.target.value.toLowerCase();
+  console.log("-----------event input----------------");
+  console.log("event:", e, e.inputType);
+  console.log("event.inputType:", e.inputType);
+  console.log("selectedOption", selectedOption);
+  console.log("e.targetvalue", e.target.value);
+  if (event === "selected") {
+    const filterPokeByType = filterByType(copieAllPokemon, selectedOption);
+    console.log(filterPokeByType);
+    renderDataToHtml(filterPokeByType);
+  }
+});
+
 // Sort Buttons Section
 const buttonSortAlphaA = document.getElementById("sortAlphaA");
 const buttonSortAlphaZ = document.getElementById("sortAlphaZ");
@@ -49,33 +70,21 @@ const buttonSortAscNumber = document.getElementById("sortAscNumber");
 const buttonSortDescNumber = document.getElementById("sortDescNumber");
 
 buttonSortAlphaA.addEventListener("click", function () {
-  const cards = document.getElementById("cards");
-  //Clean
-  cards.innerHTML = "";
   const sortAlphaA = orderByAlphaA(copieAllPokemon);
   renderDataToHtml(sortAlphaA);
 });
 
 buttonSortAlphaZ.addEventListener("click", function () {
-  const cards = document.getElementById("cards");
-  //Clean
-  cards.innerHTML = "";
   const sortAlphaZ = orderByAlphaZ(copieAllPokemon);
   renderDataToHtml(sortAlphaZ);
 });
 
 buttonSortAscNumber.addEventListener("click", function () {
-  const cards = document.getElementById("cards");
-  //Clean
-  cards.innerHTML = "";
   const sortAscNumber = orderByNumberAsc(copieAllPokemon);
   renderDataToHtml(sortAscNumber);
 });
 
 buttonSortDescNumber.addEventListener("click", function () {
-  const cards = document.getElementById("cards");
-  //Clean
-  cards.innerHTML = "";
   const sortDescNumber = orderByNumberDesc(copieAllPokemon);
   renderDataToHtml(sortDescNumber);
 });
