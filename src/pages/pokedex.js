@@ -5,7 +5,7 @@ import {
   orderByAlphaA,
   orderByAlphaZ,
 } from "../dataController.js";
-import { filterByType } from "../dataController.js";
+import { filterByType, searchByName } from "../dataController.js";
 
 function createCard(pokemon) {
   let allPills = "";
@@ -45,6 +45,18 @@ function renderDataToHtml(data) {
 const copieAllPokemon = [...allPokemon];
 renderDataToHtml(copieAllPokemon);
 
+//Search by name
+const searchName = document.getElementById("searchName");
+
+searchName.onkeyup = (event) => {
+  const valueInput = event.target.value;
+  console.log("event.target.value", event.target.value);
+  if (typeof event.target.value === "string") {
+    const arraySearch = searchByName(copieAllPokemon, valueInput);
+    console.log("searchByName ", arraySearch);
+    renderDataToHtml(arraySearch);
+  }
+};
 //Filter by Type
 const pokemonType = document.getElementById("pokemonType");
 
@@ -64,16 +76,19 @@ pokemonType.addEventListener("input", function (e) {
 });
 
 //Filter by Rarity
- const pokemonRarity = document.getElementById("pokemonRarity");
- 
- pokemonRarity.addEventListener("input", function (e) {
-  const event = e.inputRarity ? "input" : "selected";
+const pokemonRarity = document.getElementById("pokemonRarity");
+
+pokemonRarity.addEventListener("input", function (e) {
+  const event = e.inputType ? "input" : "selected";
   const selectedOption = e.target.value.toLowerCase();
-  if(event === "selected") {
-    const filterPokemonByRarity = filterByRarity(copieAllPokemon, selectedOption);
+  if (event === "selected") {
+    const filterPokemonByRarity = filterByRarity(
+      copieAllPokemon,
+      selectedOption
+    );
     renderDataToHtml(filterPokemonByRarity);
   }
- })
+});
 
 // Sort Buttons Section
 const buttonSortAlphaA = document.getElementById("sortAlphaA");
@@ -100,4 +115,3 @@ buttonSortDescNumber.addEventListener("click", function () {
   const sortDescNumber = orderByNumberDesc(copieAllPokemon);
   renderDataToHtml(sortDescNumber);
 });
-
