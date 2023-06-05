@@ -1,3 +1,4 @@
+import pokemon from "./data/pokemon/pokemon.js";
 import data from "./data/pokemon/pokemon.js";
 
 export const allPokemon = data.pokemon;
@@ -36,3 +37,11 @@ export const filterByType = (newPokemon, type) => {
   });
   return result;
 };
+
+export const filterByRarity = (newPokemon, type) => {
+  const result = newPokemon.filter ((pokemon) =>
+   pokemon["pokemon-rarity"] === type);
+    
+  return result;
+};
+ 

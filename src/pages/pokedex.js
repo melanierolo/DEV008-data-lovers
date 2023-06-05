@@ -1,4 +1,4 @@
-import { allPokemon } from "../dataController.js";
+import { allPokemon, filterByRarity } from "../dataController.js";
 import {
   orderByNumberAsc,
   orderByNumberDesc,
@@ -62,6 +62,18 @@ pokemonType.addEventListener("input", function (e) {
     renderDataToHtml(filterPokeByType);
   }
 });
+
+//Filter by Rarity
+ const pokemonRarity = document.getElementById("pokemonRarity");
+ 
+ pokemonRarity.addEventListener("input", function (e) {
+  const event = e.inputRarity ? "input" : "selected";
+  const selectedOption = e.target.value.toLowerCase();
+  if(event === "selected") {
+    const filterPokemonByRarity = filterByRarity(copieAllPokemon, selectedOption);
+    renderDataToHtml(filterPokemonByRarity);
+  }
+ })
 
 // Sort Buttons Section
 const buttonSortAlphaA = document.getElementById("sortAlphaA");
