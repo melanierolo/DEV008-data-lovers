@@ -79,3 +79,4 @@ buttonSortDescNumber.addEventListener("click", function () {
   const sortDescNumber = orderByNumberDesc(copieAllPokemon);
   renderDataToHtml(sortDescNumber);
 });
+
