@@ -1,6 +1,6 @@
 //import pokemon from "../src/data/pokemon/pokemon.js";
 import { orderByAlphaA, orderByAlphaZ } from "../src/dataController.js";
-import { searchByName, filterByType } from "../src/dataController.js";
+import { searchByName, filterByType, filterByRarity } from "../src/dataController.js";
 
 describe("Test para ordenar de forma alfabética de A-Z", () => {
   it("is a function", () => {
@@ -125,4 +125,25 @@ describe("Test filtrar por tipo", () => {
   });
 });
 
+
+
+describe("Test filtrar por rareza", () => {
+  it("is a function", () => {
+    expect(typeof filterByRarity).toBe("function");
+  });
+  
+  it("Buscando en un arreglo de plantas la rareza legendary", () => {
+    const rareza = "legendary";
+    const array = [
+      { name: "Maleza", "pokemon-rarity": "legendary"},
+      { name: "Pasto", "pokemon-rarity": "normal"},
+      { name: "Margarita", "pokemon-rarity": "mythic"},
+    ];
+
+    
+
+    const filteredFlowers = [array[0]];
+    expect(filterByRarity(array, rareza)).toEqual(filteredFlowers);
+  });
+});
 
