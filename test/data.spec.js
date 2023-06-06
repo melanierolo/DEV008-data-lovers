@@ -1,5 +1,6 @@
 //import pokemon from "../src/data/pokemon/pokemon.js";
 import { orderByAlphaA, orderByAlphaZ } from "../src/dataController.js";
+import { searchByName, filterByType } from "../src/dataController.js";
 
 describe("Test para ordenar de forma alfabética de A-Z", () => {
   it("is a function", () => {
@@ -64,7 +65,7 @@ describe("Test para ordenar de forma numérica ascendente", () => {
     ];
     expect(orderByNumberAsc(arregloDesordenado)).toEqual(arregloOrdenado);
   });
-})
+});
 
 describe("Test para ordenar de forma numérica descendente", () => {
   it("is a function", () => {
@@ -85,30 +86,43 @@ describe("Test para ordenar de forma numérica descendente", () => {
     ];
     expect(orderByNumberDesc(arregloDesordenado)).toEqual(arregloOrdenado);
   });
-})
+});
 
-import { filterByRarity } from "../src/dataController.js";
-
-describe("Test para saber si es una función", () => {
+describe("Test para buscar por nombre", () => {
   it("is a function", () => {
-    expect(typeof filterByRarity).toBe("function");
+    expect(typeof orderByNumberDesc).toBe("function");
   });
-  
-  /*it("filtrando pokemons por rareza", () => {
-    const newPokemon = [
-      { name: "Pikachu", "pokemon-rarity":"normal" },
-      { name: "Mewtwo", "pokemon-rarity":"legendary" },
-      { name: "Bulbasaur", "pokemon-rarity":"normal" },
+  it("Buscando coincidencias en el arreglo de nombres el valor ingresado('el')", () => {
+    const valorIngresado = "el";
+    const arreglo = [
+      { name: "elena" },
+      { name: "mateo" },
+      { name: "angel" },
+      { name: "martina" },
     ];
+    const arregloResultado = [{ name: "elena" }, { name: "angel" }];
+    expect(searchByName(arreglo, valorIngresado)).toEqual(arregloResultado);
+  });
+});
 
-    
-    it("should filter the Pokémon by rarity", () => {
-      const filteredPokemons = filterByRarity(newPokemon, "normal");
+describe("Test filtrar por tipo", () => {
+  it("is a function", () => {
+    expect(typeof orderByNumberDesc).toBe("function");
+  });
+  it("Buscando en un arreglo de frutas el tipo dulce", () => {
+    const tipo = "dulce";
+    const arreglo = [
+      { name: "manzana roja", type: ["dulce"] },
+      { name: "limón", type: ["acido"] },
+      { name: "higo", type: ["dulce"] },
+      { name: "maracuyá", type: ["acido"] },
+    ];
+    const arregloResultado = [
+      { name: "manzana roja", type: ["dulce"] },
+      { name: "higo", type: ["dulce"] },
+    ];
+    expect(filterByType(arreglo, tipo)).toEqual(arregloResultado);
+  });
+});
 
-      expect(filteredPokemons).toEqual([
-        { name: "Pikachu", "pokemon-rarity":"normal" },
-        { name: "Bulbasaur", "pokemon-rarity":"normal" },
-      ]);
-    
-    });
-  })});*/})
+
