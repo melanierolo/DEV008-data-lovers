@@ -1,3 +1,4 @@
+//import pokemon from "./data/pokemon/pokemon.js";
 import data from "./data/pokemon/pokemon.js";
 
 export const allPokemon = data.pokemon;

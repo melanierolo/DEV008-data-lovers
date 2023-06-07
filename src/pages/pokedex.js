@@ -63,14 +63,8 @@ const pokemonType = document.getElementById("pokemonType");
 pokemonType.addEventListener("input", function (e) {
   const event = e.inputType ? "input" : "selected";
   const selectedOption = e.target.value.toLowerCase();
-  console.log("-----------event input----------------");
-  console.log("event:", e, e.inputType);
-  console.log("event.inputType:", e.inputType);
-  console.log("selectedOption", selectedOption);
-  console.log("e.targetvalue", e.target.value);
   if (event === "selected") {
     const filterPokeByType = filterByType(copieAllPokemon, selectedOption);
-    console.log(filterPokeByType);
     renderDataToHtml(filterPokeByType);
   }
 });
