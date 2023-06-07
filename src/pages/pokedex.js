@@ -11,7 +11,7 @@ function createCard(pokemon) {
   let allPills = "";
   for (const pill of pokemon.type) {
     allPills +=
-      "<div class='pill'>" +
+      `<div class='pill pill--${pill}'>` +
       "<p class='pill__text'>" +
       pill +
       "</p>" +
