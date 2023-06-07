@@ -33,12 +33,27 @@ function createCard(pokemon) {
   return card;
 }
 
+function createNotFound() {
+  const notFound = `<article class="notFound">
+  <h2 class="notFound__title">Opps!</h2>
+  <p class="notFound__para">The pokémon your looking for doesn’t exist on the list.</p>
+  <figure>
+    <img class="notFound__img" src="../assets/sleeping-pikachu-PhotoRoom.png" alt="sleeping pikachu" />
+  </figure>
+</article>`;
+  return notFound;
+}
+
 function renderDataToHtml(data) {
   const cards = document.getElementById("cards");
   //Clean
   cards.innerHTML = "";
-  for (let i = 0; i < data.length; i++) {
-    cards.innerHTML += createCard(data[i]);
+  if (data.length === 0) {
+    cards.innerHTML = createNotFound();
+  } else {
+    for (let i = 0; i < data.length; i++) {
+      cards.innerHTML += createCard(data[i]);
+    }
   }
 }
 
