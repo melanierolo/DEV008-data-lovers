@@ -1,10 +1,17 @@
-import { allPokemon } from "../dataController.js";
+import { allPokemon, filterByRarity } from "../dataController.js";
+import {
+  orderByNumberAsc,
+  orderByNumberDesc,
+  orderByAlphaA,
+  orderByAlphaZ,
+} from "../dataController.js";
+import { filterByType, searchByName } from "../dataController.js";
 
 function createCard(pokemon) {
   let allPills = "";
   for (const pill of pokemon.type) {
     allPills +=
-      "<div class='pill'>" +
+      `<div class='pill pill--${pill}'>` +
       "<p class='pill__text'>" +
       pill +
       "</p>" +
@@ -26,64 +33,103 @@ function createCard(pokemon) {
   return card;
 }
 
-const cards = document.getElementById("cards");
-
-for (let i = 0; i < allPokemon.length; i++) {
-  cards.innerHTML += createCard(allPokemon[i]);
+function createNotFound() {
+  const notFound = `<article class="notFound">
+  <h2 class="notFound__title">Opps!</h2>
+  <p class="notFound__para">The pokémon your looking for doesn’t exist on the list.</p>
+  <figure>
+    <img class="notFound__img" src="../assets/sleeping-pikachu-PhotoRoom.png" alt="sleeping pikachu" />
+  </figure>
+</article>`;
+  return notFound;
 }
 
+function renderDataToHtml(data) {
+  const cards = document.getElementById("cards");
+  //Clean
+  cards.innerHTML = "";
+  if (data.length === 0) {
+    cards.innerHTML = createNotFound();
+  } else {
+    for (let i = 0; i < data.length; i++) {
+      cards.innerHTML += createCard(data[i]);
+    }
+  }
+}
+
+const copieAllPokemon = [...allPokemon];
+renderDataToHtml(copieAllPokemon);
+
+//Search by name
+const searchName = document.getElementById("searchName");
+
+searchName.onkeyup = (event) => {
+  const valueInput = event.target.value;
+  console.log("event.target.value", event.target.value);
+  if (typeof event.target.value === "string") {
+    const arraySearch = searchByName(copieAllPokemon, valueInput);
+    console.log("searchByName ", arraySearch);
+    renderDataToHtml(arraySearch);
+  }
+};
 //Filter by Type
-const newPokemon = [...allPokemon];
+const pokemonType = document.getElementById("pokemonType");
 
-function filterByType(newPokemon, type) {
-  const result = newPokemon.filter(function (pokemon) {
-    return pokemon.type.includes(type);
-  });
-  return result;
-}
+pokemonType.addEventListener("input", function (e) {
+  const event = e.inputType ? "input" : "selected";
+  const selectedOption = e.target.value.toLowerCase();
+  if (event === "selected") {
+    const filterPokeByType = filterByType(copieAllPokemon, selectedOption);
+    renderDataToHtml(filterPokeByType);
+  }
+});
 
-console.log("function filter-electric", filterByType(newPokemon, "electric"));
+//Filter by Rarity
+const pokemonRarity = document.getElementById("pokemonRarity");
 
-console.log("function filter-water", filterByType(newPokemon, "water"));
-console.log("function filter-flying", filterByType(newPokemon, "flying"));
-console.log("un solo pokemon", newPokemon[0].type);
+pokemonRarity.addEventListener("input", function (e) {
+  const event = e.inputType ? "input" : "selected";
+  const selectedOption = e.target.value.toLowerCase();
+  if (event === "selected") {
+    const filterPokemonByRarity = filterByRarity(
+      copieAllPokemon,
+      selectedOption
+    );
+    renderDataToHtml(filterPokemonByRarity);
+  }
+});
 
-const newPokemonTwo = [...allPokemon];
+// Sort Buttons Section
+const buttonSortAlphaA = document.getElementById("sortAlphaA");
+const buttonSortAlphaZ = document.getElementById("sortAlphaZ");
+const buttonSortAscNumber = document.getElementById("sortAscNumber");
+const buttonSortDescNumber = document.getElementById("sortDescNumber");
 
-function orderByNumberAsc(array) {
-  const orderedArray = [...array].sort((a, b) =>
-    parseInt(a.num) > parseInt(b.num) ? 1 : -1
-  );
-  return orderedArray;
-}
+buttonSortAlphaA.addEventListener("click", function () {
+  const sortAlphaA = orderByAlphaA(copieAllPokemon);
+  renderDataToHtml(sortAlphaA);
+});
 
-function orderByNumberDesc(array) {
-  const orderedArray = [...array].sort((a, b) =>
-    parseInt(a.num) < parseInt(b.num) ? 1 : -1
-  );
-  return orderedArray;
-}
+buttonSortAlphaZ.addEventListener("click", function () {
+  const sortAlphaZ = orderByAlphaZ(copieAllPokemon);
+  renderDataToHtml(sortAlphaZ);
+});
 
-function orderByAlphaA(array) {
-  const orderedArray = [...array].sort((a, b) =>
-    a.name[0] > b.name[0] ? 1 : -1
-  );
-  return orderedArray;
-}
+buttonSortAscNumber.addEventListener("click", function () {
+  const sortAscNumber = orderByNumberAsc(copieAllPokemon);
+  renderDataToHtml(sortAscNumber);
+});
 
-function orderByAlphaZ(array) {
-  const orderedArray = [...array].sort((a, b) =>
-    a.name[0] < b.name[0] ? 1 : -1
-  );
-  return orderedArray;
-}
+buttonSortDescNumber.addEventListener("click", function () {
+  const sortDescNumber = orderByNumberDesc(copieAllPokemon);
+  renderDataToHtml(sortDescNumber);
+});
 
-const sortAsc = orderByNumberAsc(newPokemonTwo);
-const sortDesc = orderByNumberDesc(newPokemonTwo);
-const sortAtoZ = orderByAlphaA(newPokemonTwo);
-const sortZtoA = orderByAlphaZ(newPokemonTwo);
+// Clear Button
+const buttonClear = document.getElementById("clear");
 
-console.log("function sort-asc", sortAsc);
-console.log("function sort-desc", sortDesc);
-console.log("function A-Z", sortAtoZ);
-console.log("function Z-A", sortZtoA);
+buttonClear.addEventListener("click", function () {
+  document.getElementById("searchName").value = "";
+  document.getElementById("pokemonRarity").value = "";
+  document.getElementById("pokemonType").value = "";
+});
