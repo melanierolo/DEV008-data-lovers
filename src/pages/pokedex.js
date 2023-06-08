@@ -28,6 +28,7 @@ function createCard(pokemon) {
       <p class="card__num">N° ${pokemon.num}</p>
       <p class="card__name">${pokemon.name}</p>
       <div class="card__pills">${allPills}</div>
+      <button class="btn-poke" id="${pokemon.num}">READ MORE</button>
     </div>
   </div>`;
   return card;
@@ -54,6 +55,19 @@ function renderDataToHtml(data) {
     for (let i = 0; i < data.length; i++) {
       cards.innerHTML += createCard(data[i]);
     }
+  }
+
+  //select all the buttons on the cards
+  const buttonsCards = document.querySelectorAll(".btn-poke");
+
+  for (const buttonCard of buttonsCards) {
+    buttonCard.addEventListener("click", function () {
+      console.log(buttonCard.id);
+      console.log(
+        copieAllPokemon.filter((pokemon) => pokemon.num === buttonCard.id)
+      );
+    });
+    //
   }
 }
 
