@@ -124,3 +124,20 @@ buttonSortDescNumber.addEventListener("click", function () {
   const sortDescNumber = orderByNumberDesc(copieAllPokemon);
   renderDataToHtml(sortDescNumber);
 });
+
+// Clear Button
+const buttonClear = document.getElementById("clear");
+ 
+buttonClear.addEventListener("click", function() {
+  document.getElementById("searchName").value = "";
+  document.getElementById("pokemonRarity").value = "";
+  document.getElementById("pokemonType").value = "";
+  
+}) 
+  
+
+ 
+  
+ 
+
+
