@@ -231,3 +231,12 @@ h1 {
   height: 300px;
   object-fit: cover;
 }
+
+/*modal*/
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
