@@ -118,18 +118,21 @@ function renderDataToHtml(data) {
 
   //select all the buttons on the cards
   const buttonsCards = document.querySelectorAll(".btn-poke");
-  console.log(buttonsCards);
-  let count = 0;
 
   for (const buttonCard of buttonsCards) {
     buttonCard.addEventListener("click", function () {
-      count++;
-      console.log(count);
+      //get the info of the pokemon
       const pokemonInfo = copieAllPokemon.filter(
         (pokemon) => pokemon.num === buttonCard.id
       )[0];
-      console.log(pokemonInfo);
 
+      //add a class called show in the modal
+      if (modal.classList.contains("hide")) {
+        modal.classList.remove("hide");
+        modal.classList.add("show");
+      }
+
+      //add content on the modal
       modalContentText.innerHTML = createModalContent(pokemonInfo);
     });
   }
@@ -148,6 +151,7 @@ function createModal() {
 
   //Add classes(style)
   modal.classList.add("modal");
+  modal.classList.add("hide");
   modalContent.classList.add("modalContent");
   modalContentBtn.classList.add("modalContent__btn");
   modalContentText.classList.add("modalContent__text");
@@ -157,10 +161,6 @@ function createModal() {
 
   //Add Text
   btnClose.textContent = "x";
-
-  /*//Add text
-console.log(buttonCard.id);
-console.log(pokemonInfo);*/
 }
 
 const copieAllPokemon = [...allPokemon];
@@ -250,3 +250,10 @@ const modalContentText = document.createElement("div");
 const btnClose = document.createElement("button");
 
 createModal();
+
+btnClose.addEventListener("click", () => {
+  if (modal.classList.contains("show")) {
+    modal.classList.remove("show");
+    modal.classList.add("hide");
+  }
+});
