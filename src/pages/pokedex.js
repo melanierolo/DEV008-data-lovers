@@ -28,7 +28,7 @@ function createCard(pokemon) {
       <p class="card__num">N° ${pokemon.num}</p>
       <p class="card__name">${pokemon.name}</p>
       <div class="card__pills">${allPills}</div>
-      <button class="btn-poke" id="${pokemon.num}">READ MORE</button>
+      <button class="btn-poke btn btn--primary btn--flex" id="${pokemon.num}">READ MORE</button>
     </div>
   </div>`;
   return card;
@@ -47,58 +47,190 @@ function createNotFound() {
 
 function createModalContent(pokemon) {
   console.log("modal pokemon", pokemon);
+
+  /*Base Info */
+  let typePills = "";
+  for (const pill of pokemon.type) {
+    typePills +=
+      `<div class='pill pill--${pill}'>` +
+      "<p class='pill__text'>" +
+      pill +
+      "</p>" +
+      "</div>";
+  }
+
   const baseInfo = `
-    <div>
-      <img class="card__img" src=${pokemon.img} >
-      <p>Height: ${pokemon.size["height"]}</p>
-      <p>Weight: ${pokemon.size["weight"]}</p>
+    <div class="pokeInfo">
+      <figure class="pokeInfo__fig">
+        <img class="pokeInfo__img" src=${pokemon.img} >
+      </figure>
+      <div class="pokeInfo__sizes" >
+        <h4>Height:</h4>
+        <p>${pokemon.size["height"]}</p>
+        <h4>Weight:</h4>
+        <p>${pokemon.size["weight"]}</p>
+      </div>
     </div>
-    <div>
-      <p>${pokemon.name}</p>
-      <p>${pokemon.num}</p>
-      <h3>About:</h3>
-      <p>${pokemon.about}</p>
+    <div class="pokeInfoTwo">
+      <div class="pokeInfoTwo__text">
+        <p class="pokeInfoTwo__text-name">${pokemon.name}</p>
+        <p class="pokeInfoTwo__text-number">N°${pokemon.num}</p>
+      </div>
+      <div class="pokeInfo__text">
+        <h4>About:</h4>
+        <p>${pokemon.about}</p>
+        <h4>Types</h4>
+        <div class="modalPills">
+          ${typePills}
+        </div>
+      </div>
     </div>`;
 
-  const baseStats = `
+  /*Base Stats */
+  const baseStats = `<div class="baseStats">
       <div>
         <h3>Base Stats</h3>
       </div>
       <div>
         <label for="maxHp">max-hp:</label>
-        <progress id="maxHp" value="${pokemon.stats["max-hp"]}" max="255">  </progress>
+        <progress id="maxHp" value="${pokemon.stats["max-hp"]}" max="403">  </progress>
+        <span>${pokemon.stats["max-hp"]}</span>
       </div>
       <div>
         <label for="maxCp">max-cp:</label>
-        <progress id="maxCp" value="${pokemon.stats["max-cp"]}" max="100"></progress>
+        <progress id="maxCp" value="${pokemon.stats["max-cp"]}" max="4178"></progress>
+        <span>${pokemon.stats["max-cp"]}</span>
       </div>
       <div>
-        <label for="stamina">base-stamina:</label>
-        <progress id="stamina" value="${pokemon.stats["base-stamina"]}" max="100"></progress>
+        <label for="stamina">Stamina:</label>
+        <progress id="stamina" value="${pokemon.stats["base-stamina"]}" max="282"></progress>
+        <span>${pokemon.stats["base-stamina"]}</span>
       </div>
       <div>
-        <label for="defense">base-defense:</label>
-        <progress id="defense" value="${pokemon.stats["base-defense"]}" max="200"></progress>
+        <label for="defense">Defense:</label>
+        <progress id="defense" value="${pokemon.stats["base-defense"]}" max="396"></progress>
+        <span>${pokemon.stats["base-defense"]}</span>
       </div>
       <div>
-        <label for="attack">base-attack:</label>
-        <progress id="attack" value="${pokemon.stats["base-attack"]}" max="190"></progress>
+        <label for="attack">Attack:</label>
+        <progress id="attack" value="${pokemon.stats["base-attack"]}" max="300"></progress>
+        <span>${pokemon.stats["base-attack"]}</span>
       </div>
+    </div>
       `;
 
-  const effectivenessType = `       <div>
-  <div><h3>Effectiveness Type</h3></div>
-  <div>
-    <div><p>Resistant</p></div>
-    <div><p>Weaknesses</p></div>
-    <div><p>Special-attack</p></div>
-  </div>
-</div>`;
+  /*Evolutions */
+  const evolutionsPills = [pokemon.name];
+
+  if (
+    pokemon.evolution["next-evolution"] &&
+    pokemon.evolution["prev-evolution"]
+  ) {
+    evolutionsPills.push(pokemon.evolution["next-evolution"][0]["name"]);
+    evolutionsPills.unshift(pokemon.evolution["prev-evolution"][0]["name"]);
+  } else if (
+    pokemon.evolution["next-evolution"] &&
+    !pokemon.evolution["prev-evolution"]
+  ) {
+    evolutionsPills.push(pokemon.evolution["next-evolution"][0]["name"]);
+    if (
+      Array.isArray(pokemon.evolution["next-evolution"][0]["next-evolution"])
+    ) {
+      evolutionsPills.push(
+        pokemon.evolution["next-evolution"][0]["next-evolution"][0]["name"]
+      );
+    }
+  } else if (
+    !pokemon.evolution["next-evolution"] &&
+    pokemon.evolution["prev-evolution"]
+  ) {
+    evolutionsPills.unshift(pokemon.evolution["prev-evolution"][0]["name"]);
+    if (
+      Array.isArray(pokemon.evolution["prev-evolution"][0]["prev-evolution"])
+    ) {
+      evolutionsPills.unshift(
+        pokemon.evolution["prev-evolution"][0]["prev-evolution"][0]["name"]
+      );
+    }
+  }
+
+  console.log("evolutions", evolutionsPills);
+  console.log("evolutions", pokemon.evolution);
+  const stringEvolutions = evolutionsPills.join(" &#10095; ");
+
+  const evolutions = `<div class="pokeEvolution">
+      <h3>Evolutions</h3>
+      <p>${stringEvolutions}</p>
+    </div>`;
+
+  /*Effectiveness Type */
+
+  let resistantPills = "";
+  for (const pill of pokemon.resistant) {
+    resistantPills +=
+      `<div class='pill pill--${pill}'>` +
+      "<p class='pill__text'>" +
+      pill +
+      "</p>" +
+      "</div>";
+  }
+
+  let weaknessesPills = "";
+  for (const pill of pokemon.weaknesses) {
+    weaknessesPills +=
+      `<div class='pill pill--${pill}'>` +
+      "<p class='pill__text'>" +
+      pill +
+      "</p>" +
+      "</div>";
+  }
+
+  let specialAttackPills = "";
+  const specialAttack = pokemon["special-attack"].map(
+    (element) => element.name
+  );
+  for (const pill of specialAttack) {
+    specialAttackPills +=
+      `<div class='pill pill--normal'>` +
+      "<p class='pill__text'>" +
+      pill +
+      "</p>" +
+      "</div>";
+  }
+
+  const effectivenessType = `       
+  <div class="pokeEffective">
+    <div class="pokeEffective__title">
+      <h3>Effectiveness Type</h3>
+    </div>
+    <div class="pokeEffective__types">
+      <div>
+        <p class="pokeEffective__subtitle">Resistant</p>
+        <div class="modalPills">
+          ${resistantPills} 
+        </div>
+      </div>
+      <div>
+        <p class="pokeEffective__subtitle">Weaknesses</p>
+        <div class="modalPills">
+          ${weaknessesPills} 
+        </div>
+      </div>
+      <div>
+        <p class="pokeEffective__subtitle">Special-attack</p>
+        <div class="modalPills">
+        ${specialAttackPills}
+      </div>
+      </div>
+    </div>
+  </div>`;
+
   const modalContent = `
-<div>
-  <div>${baseInfo}</div>
-  <div>${baseStats}</div>
-  <div>${effectivenessType}</div>
+<div class="contentGrid">
+  <div class="info">${baseInfo}</div>
+  <div class="stats modalBorderSection">${baseStats}</div>
+  <div class="evolution modalBorderSection">${evolutions}</div>
+  <div class="effectiveness modalBorderSection">${effectivenessType}</div>
 </div>
 `;
   return modalContent;

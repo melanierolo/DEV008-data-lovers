@@ -76,7 +76,7 @@
 .pill__text {
   color: whitesmoke;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 20px;
   text-align: center;
 }
@@ -232,11 +232,219 @@ h1 {
   object-fit: cover;
 }
 
-/*modal*/
+/*----------modal-----------*/
 .show {
   display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  margin: auto 0;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 25, 70);
+  background-color: rgba(0, 25, 70, 0.8);
 }
 
 .hide {
   display: none;
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: 25px;
+  width: 80%;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.modalContent__btn {
+  display: flex;
+  justify-content: end;
+}
+
+#btnCloseModal {
+  border-color: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  font-weight: 600;
+  border: none;
+  color: whitesmoke;
+  background-color: #f40c0c;
+}
+
+#btnCloseModal:hover {
+  background-color: #c00004;
+}
+
+.modalBorderSection {
+  border-top: 4px solid #ffc107;
+  border-radius: 0 25px 0 0;
+  padding: 10px;
+}
+
+.modalPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/*Info*/
+.pokeInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.pokeInfoTwo {
+  border-top: 4px solid #ffc107;
+  border-radius: 0 25px 0 0;
+}
+
+.pokeInfoTwo__text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 28px;
+}
+.pokeInfoTwo__text-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 45px;
+  background: #ffc107;
+  border-radius: 0px 50px 50px 0px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #fffff1;
+  position: relative;
+  top: -22.5px;
+}
+
+.pokeInfoTwo__text-number {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 0px 20px 0 0;
+}
+
+.pokeInfo__text {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*baseStats*/
+.baseStats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*Evolution*/
+.pokeEvolution {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*Effectiveness Type*/
+.pokeEffective {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pokeEffective__types {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media screen and (min-width: 700px) {
+  .modalContent {
+    height: auto;
+    overflow-y: hidden;
+  }
+
+  .modalBorderSection {
+    border-radius: 25px 25px 0;
+  }
+
+  .baseStats {
+    gap: 16px;
+  }
+
+  .pokeEffective__subtitle {
+    padding: 0 0 8px 0;
+  }
+
+  .pokeEffective__types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /*Grid*/
+  .contentGrid {
+    display: grid;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5 fr;
+    grid-template-areas:
+      "info info stats stats stats"
+      "info info evolutions evolutions evolutions"
+      "effective effective effective effective effective";
+    padding: 8px 0 0 0;
+  }
+  .info {
+    grid-area: info;
+  }
+  .stats {
+    grid-area: stats;
+  }
+  .evolution {
+    grid-area: evolutions;
+  }
+  .effectiveness {
+    grid-area: effective;
+  }
+}
+
+/*buttons*/
+.btn {
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  /*text*/
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.btn--primary {
+  background: #3b5ba7;
+  color: #fffff1;
+}
+.btn--primary:hover {
+  background: #001847;
+}
+
+.btn--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
