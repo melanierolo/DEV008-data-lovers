@@ -205,19 +205,19 @@ function createModalContent(pokemon) {
     </div>
     <div class="pokeEffective__types">
       <div>
-        <p>Resistant</p>
+        <p class="pokeEffective__subtitle">Resistant</p>
         <div class="modalPills">
           ${resistantPills} 
         </div>
       </div>
       <div>
-        <p>Weaknesses</p>
+        <p class="pokeEffective__subtitle">Weaknesses</p>
         <div class="modalPills">
           ${weaknessesPills} 
         </div>
       </div>
       <div>
-        <p>Special-attack</p>
+        <p class="pokeEffective__subtitle">Special-attack</p>
         <div class="modalPills">
         ${specialAttackPills}
       </div>
@@ -226,11 +226,11 @@ function createModalContent(pokemon) {
   </div>`;
 
   const modalContent = `
-<div>
-  <div>${baseInfo}</div>
-  <div class="modalBorderSection">${baseStats}</div>
-  <div class="modalBorderSection">${evolutions}</div>
-  <div class="modalBorderSection">${effectivenessType}</div>
+<div class="contentGrid">
+  <div class="info">${baseInfo}</div>
+  <div class="stats modalBorderSection">${baseStats}</div>
+  <div class="evolution modalBorderSection">${evolutions}</div>
+  <div class="effectiveness modalBorderSection">${effectivenessType}</div>
 </div>
 `;
   return modalContent;

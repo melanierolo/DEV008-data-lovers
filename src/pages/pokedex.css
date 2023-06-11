@@ -369,6 +369,57 @@ h1 {
   gap: 8px;
 }
 
+@media screen and (min-width: 700px) {
+  .modalContent {
+    height: auto;
+    overflow-y: hidden;
+  }
+
+  .modalBorderSection {
+    border-radius: 25px 25px 0;
+  }
+
+  .baseStats {
+    gap: 16px;
+  }
+
+  .pokeEffective__subtitle {
+    padding: 0 0 8px 0;
+  }
+
+  .pokeEffective__types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /*Grid*/
+  .contentGrid {
+    display: grid;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 0.5 fr;
+    grid-template-areas:
+      "info info stats stats stats"
+      "info info evolutions evolutions evolutions"
+      "effective effective effective effective effective";
+    padding: 8px 0 0 0;
+  }
+  .info {
+    grid-area: info;
+  }
+  .stats {
+    grid-area: stats;
+  }
+  .evolution {
+    grid-area: evolutions;
+  }
+  .effectiveness {
+    grid-area: effective;
+  }
+}
+
 /*buttons*/
 .btn {
   height: 40px;
