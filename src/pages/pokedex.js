@@ -28,7 +28,7 @@ function createCard(pokemon) {
       <p class="card__num">N° ${pokemon.num}</p>
       <p class="card__name">${pokemon.name}</p>
       <div class="card__pills">${allPills}</div>
-      <button class="btn-poke" id="${pokemon.num}">READ MORE</button>
+      <button class="btn-poke btn btn--primary btn--flex" id="${pokemon.num}">READ MORE</button>
     </div>
   </div>`;
   return card;
@@ -93,27 +93,27 @@ function createModalContent(pokemon) {
       </div>
       <div>
         <label for="maxHp">max-hp:</label>
-        <progress id="maxHp" value="${pokemon.stats["max-hp"]}" max="255">  </progress>
+        <progress id="maxHp" value="${pokemon.stats["max-hp"]}" max="403">  </progress>
         <span>${pokemon.stats["max-hp"]}</span>
       </div>
       <div>
         <label for="maxCp">max-cp:</label>
-        <progress id="maxCp" value="${pokemon.stats["max-cp"]}" max="100"></progress>
+        <progress id="maxCp" value="${pokemon.stats["max-cp"]}" max="4178"></progress>
         <span>${pokemon.stats["max-cp"]}</span>
       </div>
       <div>
         <label for="stamina">Stamina:</label>
-        <progress id="stamina" value="${pokemon.stats["base-stamina"]}" max="100"></progress>
+        <progress id="stamina" value="${pokemon.stats["base-stamina"]}" max="282"></progress>
         <span>${pokemon.stats["base-stamina"]}</span>
       </div>
       <div>
         <label for="defense">Defense:</label>
-        <progress id="defense" value="${pokemon.stats["base-defense"]}" max="200"></progress>
+        <progress id="defense" value="${pokemon.stats["base-defense"]}" max="396"></progress>
         <span>${pokemon.stats["base-defense"]}</span>
       </div>
       <div>
         <label for="attack">Attack:</label>
-        <progress id="attack" value="${pokemon.stats["base-attack"]}" max="190"></progress>
+        <progress id="attack" value="${pokemon.stats["base-attack"]}" max="300"></progress>
         <span>${pokemon.stats["base-attack"]}</span>
       </div>
     </div>
