@@ -202,6 +202,32 @@ h1 {
   grid-column-start: 2;
   width: 100%;
   height: auto;
+  margin: 0 20px;
+}
+
+/*sort buttons*/
+.sortButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 20px;
+  padding: 8px 0;
+  border-bottom: 3px solid #d9d9d9;
+}
+
+.sortButtons_title {
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .sortButtons {
+    justify-content: end;
+    margin: 0 40px;
+  }
+  .sortButtons_title {
+    width: 60px;
+  }
 }
 
 /*Not found */
@@ -399,7 +425,7 @@ h1 {
     grid-row-gap: 16px;
     grid-column-gap: 16px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 0.5 fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr;
     grid-template-areas:
       "info info stats stats stats"
       "info info evolutions evolutions evolutions"
@@ -420,7 +446,7 @@ h1 {
   }
 }
 
-/*buttons*/
+/*-------buttons---------*/
 .btn {
   height: 40px;
   border: none;
@@ -447,4 +473,28 @@ h1 {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+.btn--secondary {
+  background: #fefefe;
+  border: 2px solid #3b5ba7;
+  color: #3b5ba7;
+  border-radius: 15px;
+}
+
+.btn--secondary:hover {
+  border: 2px solid #001847;
+  background: #001847;
+  color: #fffff1;
+}
+
+/*button small*/
+.btn--sm {
+  width: 80px;
+  height: 18px;
+  /*text*/
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
 }
