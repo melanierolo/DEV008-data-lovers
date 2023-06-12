@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale= " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="./pokedex.css" />
     <title>Pokémon | Pokédex</title>
@@ -27,14 +27,17 @@
           <img src="../assets/11275.webp" />
         </div>
       </section>
-      <section class="search">
-        <input
-          type="search"
-          placeholder="Search pokémon here ..."
-          id="searchName"
-        />
-      </section>
-      <section>
+      
+      <section class="findPokemon">
+        <h1 class="find__text">Find a Pokémon</h1>
+        <div class="search">
+          <input
+            type="search"
+            placeholder="Search pokémon here ..."
+            id="searchName"
+          />
+        </div>
+        <div class="filterBy">
         <label>Filter by:</label>
         <input
           list="pokemonTypes"
@@ -75,7 +78,8 @@
           <option value="Mythic"></option>
         </datalist>
 
-        <button id="clear">CLEAR</button>
+        <button id="clear">CLEAR ALL</button>
+        </div>
       </section>
       <section class="sortButtons">
         <button id="sortAlphaA">A-Z</button>
