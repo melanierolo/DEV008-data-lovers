@@ -46,8 +46,6 @@ function createNotFound() {
 }
 
 function createModalContent(pokemon) {
-  console.log("modal pokemon", pokemon);
-
   /*Base Info */
   let typePills = "";
   for (const pill of pokemon.type) {
@@ -154,8 +152,6 @@ function createModalContent(pokemon) {
     }
   }
 
-  console.log("evolutions", evolutionsPills);
-  console.log("evolutions", pokemon.evolution);
   const stringEvolutions = evolutionsPills.join(" &#10095; ");
 
   const evolutions = `<div class="pokeEvolution">
@@ -308,7 +304,6 @@ searchName.onkeyup = (event) => {
   console.log("event.target.value", event.target.value);
   if (typeof event.target.value === "string") {
     const arraySearch = searchByName(copieAllPokemon, valueInput);
-    console.log("searchByName ", arraySearch);
     renderDataToHtml(arraySearch);
   }
 };
