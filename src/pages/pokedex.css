@@ -188,10 +188,10 @@ h1 {
 
 .textBanner > p {
   color: white;
-  width: 684px;
+  width: auto;
   font-family: "Poppins";
   font-style: normal;
-  font-size: 30px;
+  font-size: 2rem;
   line-height: 36px;
   padding-top: 5%;
   padding-left: 5%;
@@ -230,4 +230,14 @@ h1 {
   width: 400px;
   height: 300px;
   object-fit: cover;
+}
+
+#searchName{
+  border-radius: 15px;
+  border: 2.5px solid #3b5ba7;
+  width: 700px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
 }
