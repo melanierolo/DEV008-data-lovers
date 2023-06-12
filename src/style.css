@@ -10,21 +10,34 @@
 }
 
 .logo {
-  height: 10vh;
-  padding: 20px;
+  height: 60px;
+  padding: 10px;
 }
 
 .logo__img {
-  height: 80px;
+  height: 40px;
   width: auto;
 }
 
+@media screen and (min-width: 770px) {
+  .logo {
+    height: 100px;
+    padding: 10px;
+  }
+  .logo__img {
+    height: 100px;
+    width: auto;
+  }
+}
+
+/*------------welcome section-----------*/
+
 .welcome {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 70vh;
+  height: calc(100vh - 60px);
   gap: 2rem;
   padding: 20px;
 }
@@ -39,7 +52,7 @@
 
 .welcome__text h2 {
   font-weight: 700;
-  font-size: 60px;
+  font-size: 3.75rem;
   line-height: 73px;
   letter-spacing: 0.05em;
   text-align: center;
@@ -47,7 +60,7 @@
 
 .welcome__text p {
   font-weight: 400;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 29px;
   letter-spacing: 0.05em;
   display: flex;
@@ -82,4 +95,11 @@
 .welcome__img img {
   width: 100%;
   height: auto;
+}
+
+@media screen and (min-width: 770px) {
+  .welcome {
+    flex-direction: row;
+    height: calc(100vh - 100px);
+  }
 }
