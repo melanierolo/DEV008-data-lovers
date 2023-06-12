@@ -178,23 +178,17 @@ header {
 
 h1 {
   color: white;
-  font-family: "Poppins";
   font-style: normal;
   font-size: 56px;
   line-height: 84px;
-  padding-top: 20%;
-  padding-left: 20%;
 }
 
 .textBanner > p {
   color: white;
   width: 684px;
-  font-family: "Poppins";
   font-style: normal;
   font-size: 30px;
   line-height: 36px;
-  padding-top: 5%;
-  padding-left: 5%;
   text-align: center;
 }
 
@@ -202,7 +196,6 @@ h1 {
   grid-column-start: 2;
   width: 100%;
   height: auto;
-  margin: 0 20px;
 }
 
 /*sort buttons*/

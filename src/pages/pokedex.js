@@ -292,9 +292,9 @@ function createModal() {
 }
 
 const copieAllPokemon = [...allPokemon];
-
+let actualRenderPokemon = [...copieAllPokemon];
 /*--------Render all pokemon--------*/
-renderDataToHtml(copieAllPokemon);
+renderDataToHtml(actualRenderPokemon);
 
 /*--------Search by name--------*/
 const searchName = document.getElementById("searchName");
@@ -303,8 +303,9 @@ searchName.onkeyup = (event) => {
   const valueInput = event.target.value;
   console.log("event.target.value", event.target.value);
   if (typeof event.target.value === "string") {
-    const arraySearch = searchByName(copieAllPokemon, valueInput);
+    const arraySearch = searchByName(actualRenderPokemon, valueInput);
     renderDataToHtml(arraySearch);
+    actualRenderPokemon = [...arraySearch];
   }
 };
 /*--------Filter by Type-------*/
@@ -314,8 +315,9 @@ pokemonType.addEventListener("input", function (e) {
   const event = e.inputType ? "input" : "selected";
   const selectedOption = e.target.value.toLowerCase();
   if (event === "selected") {
-    const filterPokeByType = filterByType(copieAllPokemon, selectedOption);
+    const filterPokeByType = filterByType(actualRenderPokemon, selectedOption);
     renderDataToHtml(filterPokeByType);
+    actualRenderPokemon = [...filterPokeByType];
   }
 });
 
@@ -327,10 +329,11 @@ pokemonRarity.addEventListener("input", function (e) {
   const selectedOption = e.target.value.toLowerCase();
   if (event === "selected") {
     const filterPokemonByRarity = filterByRarity(
-      copieAllPokemon,
+      actualRenderPokemon,
       selectedOption
     );
     renderDataToHtml(filterPokemonByRarity);
+    actualRenderPokemon = [...filterPokemonByRarity];
   }
 });
 
@@ -341,22 +344,22 @@ const buttonSortAscNumber = document.getElementById("sortAscNumber");
 const buttonSortDescNumber = document.getElementById("sortDescNumber");
 
 buttonSortAlphaA.addEventListener("click", function () {
-  const sortAlphaA = orderByAlphaA(copieAllPokemon);
+  const sortAlphaA = orderByAlphaA(actualRenderPokemon);
   renderDataToHtml(sortAlphaA);
 });
 
 buttonSortAlphaZ.addEventListener("click", function () {
-  const sortAlphaZ = orderByAlphaZ(copieAllPokemon);
+  const sortAlphaZ = orderByAlphaZ(actualRenderPokemon);
   renderDataToHtml(sortAlphaZ);
 });
 
 buttonSortAscNumber.addEventListener("click", function () {
-  const sortAscNumber = orderByNumberAsc(copieAllPokemon);
+  const sortAscNumber = orderByNumberAsc(actualRenderPokemon);
   renderDataToHtml(sortAscNumber);
 });
 
 buttonSortDescNumber.addEventListener("click", function () {
-  const sortDescNumber = orderByNumberDesc(copieAllPokemon);
+  const sortDescNumber = orderByNumberDesc(actualRenderPokemon);
   renderDataToHtml(sortDescNumber);
 });
 
@@ -367,6 +370,8 @@ buttonClear.addEventListener("click", function () {
   document.getElementById("searchName").value = "";
   document.getElementById("pokemonRarity").value = "";
   document.getElementById("pokemonType").value = "";
+  renderDataToHtml(copieAllPokemon);
+  actualRenderPokemon = [...copieAllPokemon];
 });
 
 /*--------Create a Modal--------*/
