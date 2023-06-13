@@ -573,3 +573,15 @@ header {
   height: 35px;
   width: 200px;
 }
+
+/*footer*/
+footer {
+  height: 60px;
+  color: #001946;
+  background-color: #dae2ff;
+  /*text*/
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
