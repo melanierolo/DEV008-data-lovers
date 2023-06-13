@@ -1,7 +1,25 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-Black.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-Bold.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-ExtraBold.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-ExtraLight.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-Light.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-Medium.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-Regular.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-SemiBold.ttf") format("ttf"),
+    url("./assets/fonts/Montserrat-Thin.ttf") format("ttf");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  /*font primary - fallback fonts*/
+  font-family: "Montserrat", Verdana, sans‑serif;
+  font-style: normal;
 }
 
 .home {
@@ -39,7 +57,7 @@
   justify-content: center;
   height: calc(100vh - 60px);
   gap: 2rem;
-  padding: 20px;
+  padding: 10px;
 }
 
 .welcome__text {
@@ -52,16 +70,16 @@
 
 .welcome__text h2 {
   font-weight: 700;
-  font-size: 3.75rem;
-  line-height: 73px;
+  font-size: 2rem;
+  line-height: 39px;
   letter-spacing: 0.05em;
   text-align: center;
 }
 
 .welcome__text p {
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 29px;
+  font-size: 1rem;
+  line-height: 20px;
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
@@ -99,7 +117,17 @@
 
 @media screen and (min-width: 770px) {
   .welcome {
+    padding: 20px;
     flex-direction: row;
     height: calc(100vh - 100px);
+  }
+  .welcome__text h2 {
+    font-size: 3.2rem;
+    line-height: 73px;
+  }
+
+  .welcome__text p {
+    font-size: 1.5rem;
+    line-height: 29px;
   }
 }

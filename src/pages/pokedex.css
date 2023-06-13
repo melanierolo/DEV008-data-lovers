@@ -171,43 +171,34 @@ header {
   background-color: black;
   height: 100vh;
   display: flex;
-  
-  
 }
 
-.textBanner{
+.textBanner {
   width: 50%;
-
 }
 
 .titleBanner {
   color: white;
-  font-family: "Monserrat";
-  font-style: normal;
   font-size: 4rem;
   line-height: 84px;
   letter-spacing: 0.05rem;
   text-align: center;
-  
 }
 
 .pBanner {
   color: white;
-  font-family: "Monserrat";
   font-style: normal;
   font-size: 2rem;
   line-height: 36px;
   flex-direction: row;
-  padding: 5% 5% 5% 5%;
   text-align: center;
 }
 
-.bannerImage{
+.bannerImage {
   width: 50%;
 }
 
 .bannerImage > img {
-  
   width: 100%;
   height: auto;
 }
@@ -231,9 +222,10 @@ header {
   .sortButtons {
     justify-content: end;
     margin: 0 40px;
+    padding: 16px 0;
   }
   .sortButtons_title {
-    width: 60px;
+    width: 70px;
   }
 }
 
@@ -508,37 +500,31 @@ header {
 
 /*find a pokemon*/
 
-.findPokemon{
+.findPokemon {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  background-color:#DAE2FF ;
+  background-color: #dae2ff;
   justify-content: center;
   align-items: center;
   padding: 40px 20px 40px 20px;
-
 }
 
-.find__text{
-  color:#000000;
-  font-family: "Monserrat";
-  font-style: normal;
+.find__text {
+  color: #000000;
   font-size: 56px;
-  
-  
 }
 
-.filterBy{
+.filterBy {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.search{
+.search {
   width: 100%;
-
 }
-#searchName{
+#searchName {
   border-radius: 25px;
   border: 2.5px solid #3b5ba7;
   width: 100%;
@@ -551,11 +537,8 @@ header {
   background-position: 1rem center;
 }
 
-
-.pFindPokemon{
-  color:#000000;
-  font-family: "Monserrat";
-  font-style: normal;
+.pFindPokemon {
+  color: #000000;
   font-size: 2rem;
   line-height: 36px;
   flex-direction: row;
@@ -563,7 +546,7 @@ header {
   text-align: center;
 }
 
-#clear{
+#clear {
   background: #3b5ba7;
   color: #fffff1;
   width: 150px;
@@ -575,19 +558,18 @@ header {
   font-size: 15px;
   line-height: 18px;
   letter-spacing: 0.05em;
-
 }
 
-#clear:hover{
+#clear:hover {
   background: #001847;
 }
 
-#pokemonType{
- height: 35px;
- width: 200px;
+#pokemonType {
+  height: 35px;
+  width: 200px;
 }
 
-#pokemonRarity{
+#pokemonRarity {
   height: 35px;
   width: 200px;
 }
