@@ -15,11 +15,11 @@
     <main>
       <section class="banner">
         <div class="textBanner">
-          <h1>Hello Trainer</h1>
-          <p>
-            Your invited to look for the best qualities of the Pokémon, you can
-            filter and find the ones that best suit you, to become a Pokémon
-            Master.
+          <h1 class="titleBanner">Pokédex!</h1>
+          <p class="pBanner">
+            Level up your battling skills, here. Analyze the abilities, stats,
+            and type matchups of each Pokemon, and create unbeatable strategies
+            to dominate battles. That can help you to become a Pokémon Master.
           </p>
         </div>
 
@@ -27,55 +27,63 @@
           <img src="../assets/11275.webp" />
         </div>
       </section>
-      <section class="search">
-        <input
-          type="search"
-          placeholder="Search pokémon here ..."
-          id="searchName"
-        />
-      </section>
-      <section>
-        <label>Filter by:</label>
-        <input
-          list="pokemonTypes"
-          id="pokemonType"
-          name="pokemonType"
-          placeholder="Type"
-        />
-        <datalist id="pokemonTypes">
-          <option value="Normal"></option>
-          <option value="Fire"></option>
-          <option value="Water"></option>
-          <option value="Grass"></option>
-          <option value="Electric"></option>
-          <option value="Ice"></option>
-          <option value="Fighting"></option>
-          <option value="Poison"></option>
-          <option value="Ground"></option>
-          <option value="Flying"></option>
-          <option value="Psychic"></option>
-          <option value="Bug"></option>
-          <option value="Rock"></option>
-          <option value="Ghost"></option>
-          <option value="Dark"></option>
-          <option value="Dragon"></option>
-          <option value="Steel"></option>
-          <option value="Fairy"></option>
-        </datalist>
 
-        <input
-          list="pokemonRarities"
-          id="pokemonRarity"
-          name="pokemonRarity"
-          placeholder="Rarity"
-        />
-        <datalist id="pokemonRarities">
-          <option value="Normal"></option>
-          <option value="Legendary"></option>
-          <option value="Mythic"></option>
-        </datalist>
+      <section class="findPokemon">
+        <h1 class="find__text">Find a Pokémon</h1>
+        <p class="pFindPokemon">
+          You are invited to look for the best qualities of the Pokémon. Here,
+          you can filter and find the ones that best suit you.
+        </p>
+        <div class="search">
+          <input
+            type="search"
+            placeholder="Search pokémon here ..."
+            id="searchName"
+          />
+        </div>
+        <div class="filterBy">
+          <label>Filter by:</label>
+          <input
+            list="pokemonTypes"
+            id="pokemonType"
+            name="pokemonType"
+            placeholder="Type"
+          />
+          <datalist id="pokemonTypes">
+            <option value="Normal"></option>
+            <option value="Fire"></option>
+            <option value="Water"></option>
+            <option value="Grass"></option>
+            <option value="Electric"></option>
+            <option value="Ice"></option>
+            <option value="Fighting"></option>
+            <option value="Poison"></option>
+            <option value="Ground"></option>
+            <option value="Flying"></option>
+            <option value="Psychic"></option>
+            <option value="Bug"></option>
+            <option value="Rock"></option>
+            <option value="Ghost"></option>
+            <option value="Dark"></option>
+            <option value="Dragon"></option>
+            <option value="Steel"></option>
+            <option value="Fairy"></option>
+          </datalist>
 
-        <button id="clear">CLEAR</button>
+          <input
+            list="pokemonRarities"
+            id="pokemonRarity"
+            name="pokemonRarity"
+            placeholder="Rarity"
+          />
+          <datalist id="pokemonRarities">
+            <option value="Normal"></option>
+            <option value="Legendary"></option>
+            <option value="Mythic"></option>
+          </datalist>
+
+          <button id="clear">CLEAR ALL</button>
+        </div>
       </section>
       <section class="sortButtons">
         <p class="sortButtons_title">Sort by:</p>
