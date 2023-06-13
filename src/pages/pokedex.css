@@ -582,6 +582,43 @@ header {
   width: 200px;
 }
 
+@media screen and (min-width: 480px) {
+  .findPokemon {
+    gap: 16px;
+    padding: 40px 20px 40px 20px;
+  }
+
+  .find__text {
+    width: 70%;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .pFindPokemon {
+    width: 70%;
+    font-size: 1.25rem;
+    line-height: 29px;
+  }
+  .search {
+    width: 70%;
+  }
+
+  #searchName {
+    width: 100%;
+  }
+  .filteBy {
+    width: 70%;
+  }
+  .filteBy__label {
+    width: 100px;
+  }
+  #pokemonType {
+    height: 40px;
+  }
+
+  #pokemonRarity {
+    height: 40px;
+  }
+}
 /*footer*/
 footer {
   height: 60px;
