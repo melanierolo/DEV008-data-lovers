@@ -1,0 +1,657 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 0px;
+}
+
+.card {
+  background: #ffffff;
+  border: 2.5px solid #3b5ba7;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.card__figure {
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.card__bg {
+  background-color: #dae2ff;
+  border-radius: 25px;
+  padding: 15px;
+}
+
+.card__img {
+  filter: drop-shadow(6px 6px 2px rgba(0, 0, 0, 0.2));
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 8px;
+}
+
+.card__num {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+.card__name {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.card__pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 0px;
+  gap: 4px;
+}
+
+/*pill*/
+
+.pill {
+  width: 90px;
+  height: 20px;
+  border-radius: 25px;
+  align-items: center;
+}
+
+.pill__text {
+  color: whitesmoke;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.pill--bug {
+  background-color: #8cb230;
+}
+
+.pill--dark {
+  background-color: #58575f;
+}
+
+.pill--dragon {
+  background-color: #0f6ac0;
+}
+
+.pill--electric {
+  background-color: #eab308;
+}
+
+.pill--fairy {
+  background-color: #ed6ec7;
+}
+
+.pill--fighting {
+  background-color: #d04164;
+}
+
+.pill--fire {
+  background-color: #fd7d24;
+}
+
+.pill--flying {
+  background-color: #748fc9;
+}
+
+.pill--ghost {
+  background-color: #556aae;
+}
+
+.pill--grass {
+  background-color: #62b957;
+}
+
+.pill--ground {
+  background-color: #dd7748;
+}
+
+.pill--ice {
+  background-color: #61cec0;
+}
+
+.pill--normal {
+  background-color: #9da0aa;
+}
+
+.pill--poison {
+  background-color: #a552cc;
+}
+
+.pill--psychic {
+  background-color: #ea5d60;
+}
+
+.pill--rock {
+  background-color: #baab82;
+}
+
+.pill--steel {
+  background-color: #417d9a;
+}
+
+.pill--water {
+  background-color: #4a90da;
+}
+
+/*Banner*/
+
+header {
+  background-color: #3b5ba7;
+  height: 80px;
+}
+
+.imgLogo {
+  height: 50px;
+  width: auto;
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.banner {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+}
+
+.textBanner {
+  width: 50%;
+}
+
+.titleBanner {
+  color: white;
+  font-size: 4rem;
+  line-height: 84px;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+.pBanner {
+  color: white;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 36px;
+  flex-direction: row;
+  text-align: center;
+}
+
+.bannerImage {
+  width: 50%;
+}
+
+.bannerImage > img {
+  width: 100%;
+  height: auto;
+}
+
+/*sort buttons*/
+.sortButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 20px;
+  padding: 8px 0;
+  border-bottom: 3px solid #d9d9d9;
+}
+
+.sortButtons_title {
+  width: 100%;
+}
+
+@media screen and (min-width: 480px) {
+  .sortButtons {
+    justify-content: end;
+    margin: 0 40px;
+    padding: 16px 0;
+  }
+  .sortButtons_title {
+    width: 70px;
+  }
+}
+
+/*Not found */
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #000000;
+  max-width: 400px;
+  padding: 10px;
+}
+
+.notFound__title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 39px;
+  text-align: center;
+}
+
+.notFound__para {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.notFound__img {
+  width: 150px;
+  height: 115px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 480px) {
+  .notFound {
+    max-width: 400px;
+    height: auto;
+  }
+
+  .notFound__title {
+    font-size: 3.3rem;
+    line-height: 66px;
+  }
+
+  .notFound__para {
+    font-size: 1.5rem;
+    line-height: 29px;
+  }
+
+  .notFound__img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+/*----------modal-----------*/
+.show {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 50px; /* Location of the box */
+  margin: auto 0;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 25, 70);
+  background-color: rgba(0, 25, 70, 0.8);
+}
+
+.hide {
+  display: none;
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border-radius: 25px;
+  width: 80%;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.modalContent__btn {
+  display: flex;
+  justify-content: end;
+}
+
+#btnCloseModal {
+  border-color: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  font-weight: 600;
+  border: none;
+  color: whitesmoke;
+  background-color: #f40c0c;
+}
+
+#btnCloseModal:hover {
+  background-color: #c00004;
+}
+
+.modalBorderSection {
+  border-top: 4px solid #ffc107;
+  border-radius: 0 25px 0 0;
+  padding: 10px;
+}
+
+.modalPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/*Info*/
+.pokeInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.pokeInfoTwo {
+  border-top: 4px solid #ffc107;
+  border-radius: 0 25px 0 0;
+}
+
+.pokeInfoTwo__text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 28px;
+}
+.pokeInfoTwo__text-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 45px;
+  background: #ffc107;
+  border-radius: 0px 50px 50px 0px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #fffff1;
+  position: relative;
+  top: -22.5px;
+}
+
+.pokeInfoTwo__text-number {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 0px 20px 0 0;
+}
+
+.pokeInfo__text {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*baseStats*/
+.baseStats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*Evolution*/
+.pokeEvolution {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/*Effectiveness Type*/
+.pokeEffective {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pokeEffective__types {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media screen and (min-width: 700px) {
+  .modalContent {
+    height: auto;
+    overflow-y: hidden;
+  }
+
+  .modalBorderSection {
+    border-radius: 25px 25px 0;
+  }
+
+  .baseStats {
+    gap: 16px;
+  }
+
+  .pokeEffective__subtitle {
+    padding: 0 0 8px 0;
+  }
+
+  .pokeEffective__types {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /*Grid*/
+  .contentGrid {
+    display: grid;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr;
+    grid-template-areas:
+      "info info stats stats stats"
+      "info info evolutions evolutions evolutions"
+      "effective effective effective effective effective";
+    padding: 8px 0 0 0;
+  }
+  .info {
+    grid-area: info;
+  }
+  .stats {
+    grid-area: stats;
+  }
+  .evolution {
+    grid-area: evolutions;
+  }
+  .effectiveness {
+    grid-area: effective;
+  }
+}
+
+/*-------buttons---------*/
+.btn {
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  /*text*/
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.btn--primary {
+  background: #3b5ba7;
+  color: #fffff1;
+}
+.btn--primary:hover {
+  background: #001847;
+}
+
+.btn--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.btn--secondary {
+  background: #fefefe;
+  border: 2px solid #3b5ba7;
+  color: #3b5ba7;
+  border-radius: 15px;
+}
+
+.btn--secondary:hover {
+  border: 2px solid #001847;
+  background: #001847;
+  color: #fffff1;
+}
+
+/*button small*/
+.btn--sm {
+  width: 80px;
+  height: 18px;
+  /*text*/
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+}
+
+/*find a pokemon*/
+
+.findPokemon {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #dae2ff;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.find__text {
+  color: #000000;
+  font-size: 2rem;
+}
+
+.filterBy {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 4px 0;
+}
+
+.filteBy__label {
+  width: 100%;
+  text-align: center;
+}
+
+.search {
+  width: 90%;
+  margin: 0 auto;
+}
+#searchName {
+  border-radius: 25px;
+  border: 2.5px solid #3b5ba7;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  text-indent: 50px;
+  background-image: url(../assets/search.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+}
+
+.pFindPokemon {
+  color: #000000;
+  font-size: 1rem;
+  line-height: 20px;
+  flex-direction: row;
+  text-align: center;
+}
+
+#clear {
+  background: #3b5ba7;
+  color: #fffff1;
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+}
+
+#clear:hover {
+  background: #001847;
+}
+
+#pokemonType {
+  height: 35px;
+  width: 200px;
+}
+
+#pokemonRarity {
+  height: 35px;
+  width: 200px;
+}
+
+@media screen and (min-width: 480px) {
+  .findPokemon {
+    gap: 16px;
+    padding: 40px 20px 40px 20px;
+  }
+
+  .find__text {
+    width: 70%;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .pFindPokemon {
+    width: 70%;
+    font-size: 1.25rem;
+    line-height: 29px;
+  }
+  .search {
+    width: 70%;
+  }
+
+  #searchName {
+    width: 100%;
+  }
+  .filteBy {
+    width: 70%;
+  }
+  .filteBy__label {
+    width: 100px;
+  }
+  #pokemonType {
+    height: 40px;
+  }
+
+  #pokemonRarity {
+    height: 40px;
+  }
+}
+/*footer*/
+footer {
+  height: 60px;
+  color: #001946;
+  background-color: #dae2ff;
+  /*text*/
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
