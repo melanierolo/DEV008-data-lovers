@@ -171,7 +171,11 @@ header {
   background-color: black;
   height: 100vh;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .textBanner {
   width: 50%;
@@ -202,6 +206,20 @@ header {
   width: 100%;
   height: auto;
 }
+
+@media screen and (max-width: 768px) {
+ .banner{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ }
+  .titleBanner{
+    font-size: 3rem;
+  }
+  .pBanner{
+    font-size: 1.5rem;
+  }
+ }
 
 /*sort buttons*/
 .sortButtons {
