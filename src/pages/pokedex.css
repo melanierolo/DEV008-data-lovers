@@ -171,14 +171,10 @@ header {
   background-color: black;
   height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
-
 
 .textBanner {
   width: 50%;
-  flex-direction: row;
 }
 
 .titleBanner {
@@ -200,41 +196,12 @@ header {
 
 .bannerImage {
   width: 50%;
-  display: block;
-  
 }
 
 .bannerImage > img {
   width: 100%;
   height: auto;
 }
-
-.bannerBtn {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding-top: 20px;
-}
-
-
-@media screen and (max-width: 768px) {
- .banner{
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
- }
-  .titleBanner{
-    font-size: 3rem;
-  }
-  .pBanner{
-    font-size: 1.3rem;
-  }
-  .bannerImage{
-    display:none;
-  }
- }
 
 /*sort buttons*/
 .sortButtons {
@@ -555,22 +522,6 @@ header {
   line-height: 15px;
   letter-spacing: 0.05em;
 }
-
-
-.btn--lg {
-  width: 200px;
-  height: 40px;
-  
-  
-}
-
-.anchorCenter{
-  text-align: center;
-  padding-top: 10px;
-  text-decoration: none;
-}
-
-
 
 /*find a pokemon*/
 
