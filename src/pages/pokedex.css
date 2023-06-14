@@ -234,6 +234,10 @@ header {
   .bannerImage{
     display:none;
   }
+  .textBanner{
+    width: 100%;
+    padding: 10px
+  }
  }
 
 /*sort buttons*/
@@ -313,6 +317,7 @@ header {
     height: 300px;
     object-fit: cover;
   }
+  
 }
 
 /*----------modal-----------*/
