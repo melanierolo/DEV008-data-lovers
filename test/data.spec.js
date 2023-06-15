@@ -1,9 +1,13 @@
-//import pokemon from "../src/data/pokemon/pokemon.js";
 import { orderByAlphaA, orderByAlphaZ } from "../src/dataController.js";
-import { searchByName, filterByType, filterByRarity } from "../src/dataController.js";
+import { orderByNumberAsc, orderByNumberDesc } from "../src/dataController.js";
+import {
+  searchByName,
+  filterByType,
+  filterByRarity,
+} from "../src/dataController.js";
 
 describe("Test para ordenar de forma alfabética de A-Z", () => {
-  it("is a function", () => {
+  it("Es una función", () => {
     expect(typeof orderByAlphaA).toBe("function");
   });
   it("ordenando un arreglo (A-Z)", () => {
@@ -24,7 +28,7 @@ describe("Test para ordenar de forma alfabética de A-Z", () => {
 });
 
 describe("Test para ordenar por número de forma alfabética de Z-A", () => {
-  it("is a function", () => {
+  it("Es una función", () => {
     expect(typeof orderByAlphaZ).toBe("function");
   });
   it("ordenando un arreglo(Z-A)", () => {
@@ -44,10 +48,8 @@ describe("Test para ordenar por número de forma alfabética de Z-A", () => {
   });
 });
 
-import { orderByNumberAsc, orderByNumberDesc } from "../src/dataController.js";
-
 describe("Test para ordenar de forma numérica ascendente", () => {
-  it("is a function", () => {
+  it("Es una función", () => {
     expect(typeof orderByNumberAsc).toBe("function");
   });
   it("ordenando un arreglo (Numeros ascendentes)", () => {
@@ -68,7 +70,7 @@ describe("Test para ordenar de forma numérica ascendente", () => {
 });
 
 describe("Test para ordenar de forma numérica descendente", () => {
-  it("is a function", () => {
+  it("Es una función", () => {
     expect(typeof orderByNumberDesc).toBe("function");
   });
   it("ordenando un arreglo (Numeros descendentes)", () => {
@@ -89,8 +91,8 @@ describe("Test para ordenar de forma numérica descendente", () => {
 });
 
 describe("Test para buscar por nombre", () => {
-  it("is a function", () => {
-    expect(typeof orderByNumberDesc).toBe("function");
+  it("Es una función", () => {
+    expect(typeof searchByName).toBe("function");
   });
   it("Buscando coincidencias en el arreglo de nombres el valor ingresado('el')", () => {
     const valorIngresado = "el";
@@ -105,9 +107,9 @@ describe("Test para buscar por nombre", () => {
   });
 });
 
-describe("Test filtrar por tipo", () => {
-  it("is a function", () => {
-    expect(typeof orderByNumberDesc).toBe("function");
+describe("Test para filtrar por tipo", () => {
+  it("Es una función", () => {
+    expect(typeof filterByType).toBe("function");
   });
   it("Buscando en un arreglo de frutas el tipo dulce", () => {
     const tipo = "dulce";
@@ -125,25 +127,20 @@ describe("Test filtrar por tipo", () => {
   });
 });
 
-
-
-describe("Test filtrar por rareza", () => {
-  it("is a function", () => {
+describe("Test para filtrar por rareza", () => {
+  it("Es una función", () => {
     expect(typeof filterByRarity).toBe("function");
   });
-  
+
   it("Buscando en un arreglo de plantas la rareza legendary", () => {
     const rareza = "legendary";
     const array = [
-      { name: "Maleza", "pokemon-rarity": "legendary"},
-      { name: "Pasto", "pokemon-rarity": "normal"},
-      { name: "Margarita", "pokemon-rarity": "mythic"},
+      { name: "Maleza", "pokemon-rarity": "legendary" },
+      { name: "Pasto", "pokemon-rarity": "normal" },
+      { name: "Margarita", "pokemon-rarity": "mythic" },
     ];
-
-    
 
     const filteredFlowers = [array[0]];
     expect(filterByRarity(array, rareza)).toEqual(filteredFlowers);
   });
 });
-

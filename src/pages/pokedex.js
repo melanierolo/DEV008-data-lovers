@@ -301,7 +301,6 @@ const searchName = document.getElementById("searchName");
 
 searchName.onkeyup = (event) => {
   const valueInput = event.target.value;
-  console.log("event.target.value", event.target.value);
   if (typeof event.target.value === "string") {
     const arraySearch = searchByName(actualRenderPokemon, valueInput);
     renderDataToHtml(arraySearch);
