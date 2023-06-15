@@ -1,5 +1,14 @@
 # Pokémon
 
+## Índice
+
+1. [Resumen](https://github.com/melanierolo/DEV008-data-lovers/tree/development#1-resumen#1-resumen)
+2. [Definición de Producto](https://github.com/melanierolo/DEV008-data-lovers/tree/development#2-definición-de-producto)
+3. [Historias de usuario](https://github.com/melanierolo/DEV008-data-lovers/tree/development#3-historias-de-usuario)
+4. [Prototipos](https://github.com/melanierolo/DEV008-data-lovers/tree/development/#4-prototipos)
+5. [Objetivos de aprendizaje](https://github.com/melanierolo/DEV008-data-lovers/tree/development#5-objetivos-de-aprendizaje)
+6. [Checklist](https://github.com/melanierolo/DEV008-data-lovers/tree/development#6-checklist)
+
 ## 1. Resumen
 
 El propósito de este proyecto fue desarrollar una página web responsive utilizando el marco de trabajo ágil SCRUM. Además, tuvo como objetivo principal facilitar al usuario el filtrado, ordenamiento y presentar de forma amigable la información detallada de cada Pokémon.
@@ -31,7 +40,7 @@ e. Por último, la mayoría de los usuarios le gustaría hacer uso de la web a c
 
 ![Historia de usuario 1 y 2](./src/assets/historias/historias-de-usuario-1.png)
 
-[Link con todas las historias de usuario](https://drive.google.com/file/d/18ijRy2SI-GxnN6mYrcFKG-ZIavGCWSgZ/view?usp=sharing)
+[Link con todas las historias de usuario](https://drive.google.com/file/d/173blWjfZayMJQAWlxxrScin8C-b8UCzi/view?usp=sharing)
 
 ## 4. Prototipos
 
