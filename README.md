@@ -2,7 +2,7 @@
 
 ## Índice
 
-1. [Resumen](https://github.com/melanierolo/DEV008-data-lovers/tree/development#1-resumen#1-resumen)
+1. [Resumen](https://github.com/melanierolo/DEV008-data-lovers/tree/development#1-resumen)
 2. [Definición de Producto](https://github.com/melanierolo/DEV008-data-lovers/tree/development#2-definición-de-producto)
 3. [Historias de usuario](https://github.com/melanierolo/DEV008-data-lovers/tree/development#3-historias-de-usuario)
 4. [Prototipos](https://github.com/melanierolo/DEV008-data-lovers/tree/development/#4-prototipos)
@@ -21,10 +21,10 @@ a. Nuestros usuarios están en el rango de edad de 25 a 34 años. Además, la ma
 ![formulario - ¿cuál es tu edad?](./src/assets/form/form-pok%C3%A9mon-1.png)
 ![formulario - género](./src/assets//form/form-pok%C3%A9mon-2.png)
 
-b. La razón principal de nuestros usarios para usar la aplicación es el entretenimientos, diversión y las batallas emocionantes de los Pokémon.
+b. La razón principal de nuestros usuarios para usar la página web es el entretenimientos, diversión y las batallas emocionantes de los Pokémon.
 ![formulario - razón de jugar pokémon](./src/assets/form/form-pok%C3%A9mon-3.png).
 
-c.La información relevante para una interfaz, según los usuarios, fue la imagen y estadísticas de combate.Además, se considero importante las habilidades y debilidades.
+c. La información relevante para una interfaz, según los usuarios, fue la imagen y estadísticas de combate.Además, se considero importante las habilidades y debilidades.
 
 ![formulario - interfaz](./src//assets/form/form-pok%C3%A9mon-4.png).
 
