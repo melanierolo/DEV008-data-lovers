@@ -6,8 +6,9 @@
 2. [Definición de Producto](https://github.com/melanierolo/DEV008-data-lovers/tree/development#2-definición-de-producto)
 3. [Historias de usuario](https://github.com/melanierolo/DEV008-data-lovers/tree/development#3-historias-de-usuario)
 4. [Prototipos](https://github.com/melanierolo/DEV008-data-lovers/tree/development/#4-prototipos)
-5. [Objetivos de aprendizaje](https://github.com/melanierolo/DEV008-data-lovers/tree/development#5-objetivos-de-aprendizaje)
-6. [Checklist](https://github.com/melanierolo/DEV008-data-lovers/tree/development#6-checklist)
+5. [Testeos de usabilidad](https://github.com/melanierolo/DEV008-data-lovers/tree/development#5-testeos-de-usabilidad)
+6. [Objetivos de aprendizaje](https://github.com/melanierolo/DEV008-data-lovers/tree/development#6-objetivos-de-aprendizaje)
+7. [Checklist](https://github.com/melanierolo/DEV008-data-lovers/tree/development#7-checklist)
 
 ## 1. Resumen
 
@@ -66,7 +67,13 @@ Para ver más nuestro prototipo de alta fidelidad, click en el siguiente enlace:
 
 [Figma - prototipo de alta fidelidad](https://www.figma.com/proto/EFLWDgx993yeqVcVaelNCI/Pok%C3%A9monApp?type=design&node-id=465-690&scaling=min-zoom&page-id=2%3A2)
 
-## 5. Objetivos de aprendizaje
+## 5. Testeos de usabilidad
+
+- A los usuarios les gustaría ver los colores que representan a cada tipo pokémon y eso no estaba en el diseño original. Entonces, se agregaron los colores en las cards y el modal.
+
+- También sugirieron que se necesitaba tener una sección para los botones de ordenamiento. Luego, se añadio esa sección con su diseño de alta fidelidad correspondiente en Figma.
+
+## 6. Objetivos de aprendizaje
 
 ### HTML
 
@@ -142,7 +149,7 @@ Para ver más nuestro prototipo de alta fidelidad, click en el siguiente enlace:
 
 - [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
 
-## 6. Checklist
+## 7. Checklist
 
 - [ ] Usa VanillaJS.
 - [ ] Pasa linter (`npm run pretest`)
